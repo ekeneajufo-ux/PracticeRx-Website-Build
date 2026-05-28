@@ -1,0 +1,35 @@
+# PracticeRx Consulting — https://practicerxconsulting.com
+# Helping physicians launch independent DPC and concierge practices
+
+User-agent: *
+Allow: /
+Disallow: /login
+Disallow: /signup
+Disallow: /dashboard
+Disallow: /settings
+Disallow: /thank-you
+
+# Sitemap
+Sitemap: https://practicerxconsulting.com/sitemap.xml
+
+# AI Crawlers — welcome
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: cohere-ai
+Allow: /

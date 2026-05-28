@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/((?!assets/|robots\\.txt|sitemap\\.xml|llms\\.txt|BingSiteAuth\\.xml|favicon\\.png|apple-touch-icon\\.png|icon-192\\.png|icon-512\\.png|og-image\\.png|dpc-trends-report-2026\\.pdf|dpc-employer-playbook\\.pdf).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
