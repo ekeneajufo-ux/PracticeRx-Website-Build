@@ -1,14 +1,13 @@
-import { Check, Brain } from "lucide-react";
+import { Check, Brain, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useSEO } from "../hooks/useSEO";
 import { CTABanner } from "../components/CTABanner";
-import { DiagnosticProducts } from "../components/DiagnosticProducts";
-import { GuidesResources } from "../components/GuidesResources";
 
 const PLANS = [
   {
     tag: "Single Session",
     title: "Strategy Session",
+    price: "Starting at $250",
     desc: "A focused call to validate your model, market, and next steps.",
     features: [
       "60-minute deep dive",
@@ -17,11 +16,13 @@ const PLANS = [
       "Action items in 24 hours",
     ],
     cta: "Book session",
+    href: "/contact",
     featured: false,
   },
   {
     tag: "12-Week Program",
     title: "Practice Launch",
+    price: "Starting at $3,500",
     desc: "Our flagship, end-to-end engagement to open your doors in 90 days.",
     features: [
       "Weekly 1:1 coaching",
@@ -31,11 +32,13 @@ const PLANS = [
       "Done-with-you implementation",
     ],
     cta: "Apply now",
+    href: "/contact",
     featured: true,
   },
   {
     tag: "Ongoing",
     title: "Monthly Advisory",
+    price: "Starting at $750/mo",
     desc: "For practices that are open and ready to scale sustainably.",
     features: [
       "Monthly strategy calls",
@@ -44,41 +47,25 @@ const PLANS = [
       "Quarterly growth plan",
     ],
     cta: "Get started",
+    href: "/contact",
     featured: false,
-  },
-];
-
-const STEPS = [
-  {
-    num: "01",
-    title: "Discovery call",
-    desc: "We learn your goals, market, and constraints — and map the realistic path.",
-  },
-  {
-    num: "02",
-    title: "Design & build",
-    desc: "Model, ops, tech stack, and brand. Every piece engineered to launch.",
-  },
-  {
-    num: "03",
-    title: "Launch & grow",
-    desc: "Open your doors with a patient pipeline and a system you can scale.",
   },
 ];
 
 export function ServicesPage() {
   useSEO({
     title: "Services",
-    description: "Expert consulting services for physicians launching DPC, concierge, and cash-based practices. From business formation to patient acquisition.",
+    description:
+      "Expert consulting services for physicians launching DPC, concierge, and cash-based practices. From business formation to patient acquisition.",
     path: "/services",
   });
+
   return (
     <div>
-      {/* Header */}
+      {/* ── Header ───────────────────────────────────────────── */}
       <section className="pt-8 pb-6 md:pt-12 md:pb-8">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            {/* Left: text */}
             <div>
               <span className="text-xs font-semibold tracking-[0.2em] uppercase text-gold">
                 Services
@@ -91,11 +78,27 @@ export function ServicesPage() {
                 <span className="italic text-gold">real launches.</span>
               </h1>
               <p className="mt-5 text-navy/60 max-w-lg leading-relaxed">
-                Three ways to work together — whether you&apos;re just exploring,
+                Three ways to work together — whether you&apos;re exploring,
                 ready to launch, or scaling an existing practice.
               </p>
+
+              {/* Audience fork */}
+              <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                <a
+                  href="#coaching"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-navy text-white text-sm font-semibold hover:bg-navy/90 transition-colors"
+                >
+                  I want done-with-you coaching
+                </a>
+                <Link
+                  to="/subscriptions"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-navy/20 text-navy text-sm font-semibold hover:bg-cream transition-colors"
+                >
+                  I want a self-serve resource <ArrowRight className="size-3.5" />
+                </Link>
+              </div>
             </div>
-            {/* Right: infographic */}
+
             <div className="flex justify-center">
               <img
                 src="/physician-roadmap.jpg"
@@ -107,8 +110,8 @@ export function ServicesPage() {
         </div>
       </section>
 
-      {/* Pricing Cards */}
-      <section className="py-8 md:py-10 bg-white">
+      {/* ── Core Coaching Tiers ──────────────────────────────── */}
+      <section id="coaching" className="py-8 md:py-10 bg-white">
         <div className="container">
           <span className="text-xs font-semibold tracking-[0.2em] uppercase text-gold">
             The Path
@@ -149,6 +152,12 @@ export function ServicesPage() {
                 >
                   {plan.title}
                 </h3>
+                <p
+                  className="text-lg font-semibold text-navy mt-1"
+                  style={{ fontFamily: "var(--font-heading)" }}
+                >
+                  {plan.price}
+                </p>
                 <p className="text-sm text-navy/50 mt-2 leading-relaxed">
                   {plan.desc}
                 </p>
@@ -161,7 +170,7 @@ export function ServicesPage() {
                   ))}
                 </ul>
                 <Link
-                  to="/contact"
+                  to={plan.href}
                   className={`mt-6 block w-full text-center px-5 py-2.5 text-sm font-semibold rounded-lg transition-colors ${
                     plan.featured
                       ? "bg-gold text-navy hover:bg-gold-light"
@@ -176,120 +185,69 @@ export function ServicesPage() {
         </div>
       </section>
 
-      {/* AI Workflow Optimization */}
+      {/* ── AI Audit Callout ─────────────────────────────────── */}
       <section className="py-8 md:py-10">
         <div className="container">
-          <div className="rounded-xl border-2 border-purple-200/60 bg-gradient-to-br from-purple-50/40 to-white p-6 md:p-8">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              {/* Left: details */}
+          <div className="rounded-xl border border-purple-200/60 bg-gradient-to-br from-purple-50/40 to-white p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center gap-6 justify-between">
+            <div className="flex items-start gap-4">
+              <div className="w-11 h-11 rounded-xl bg-purple-100 flex items-center justify-center shrink-0">
+                <Brain className="size-6 text-purple-600" />
+              </div>
               <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-11 h-11 rounded-xl bg-purple-100 flex items-center justify-center">
-                    <Brain className="size-6 text-purple-600" />
-                  </div>
-                  <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-purple-50 text-purple-700">
-                    AI &amp; Productivity
-                  </span>
-                </div>
+                <p className="text-xs font-semibold tracking-widest uppercase text-purple-600 mb-1">
+                  AI &amp; Productivity
+                </p>
                 <h3
-                  className="text-2xl md:text-3xl font-semibold text-navy leading-snug"
+                  className="text-xl font-semibold text-navy"
                   style={{ fontFamily: "var(--font-heading)" }}
                 >
-                  AI Workflow Optimization
+                  AI Workflow Audit — $497
                 </h3>
-                <p className="text-sm text-navy/50 italic mt-1.5">
-                  Stop doing manually what AI can do in seconds
+                <p className="text-sm text-navy/55 mt-1 max-w-lg leading-relaxed">
+                  A done-with-you audit identifying the top 10 tasks AI can handle
+                  in your clinical and personal workflow — with custom tool
+                  recommendations and a 25-prompt physician library.
                 </p>
-                <p className="mt-4 text-sm text-navy/60 leading-relaxed">
-                  A done-with-you audit of your clinical and personal workflow —
-                  identifying the top 10 tasks AI can handle or accelerate, with a
-                  custom implementation plan, tool recommendations, and a 25-prompt
-                  library built for physician life.
-                </p>
-              </div>
-
-              {/* Right: deliverables + CTA */}
-              <div>
-                <ul className="space-y-2.5">
-                  {[
-                    "Custom AI opportunity report (top 10 tasks identified)",
-                    "Tool recommendation stack for your practice type",
-                    "60-min live implementation call",
-                    "25-prompt physician library (clinical + personal)",
-                    "30-day async follow-up check-in",
-                  ].map((d, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <Check className="size-3.5 text-gold mt-0.5 shrink-0" />
-                      <span className="text-sm text-navy/65">{d}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-6 flex items-end justify-between">
-                  <div>
-                    <p
-                      className="text-3xl font-bold text-navy"
-                      style={{ fontFamily: "var(--font-heading)" }}
-                    >
-                      $497
-                    </p>
-                    <p className="text-[11px] text-navy/40">One-time payment</p>
-                  </div>
-                  <a
-                    href="https://buy.stripe.com/4gM14mfpXcIPg3UdN16J206"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 text-sm font-bold bg-gold text-navy rounded-lg hover:bg-gold-light transition-colors shadow-md"
-                  >
-                    Book AI Audit — $497
-                  </a>
-                </div>
               </div>
             </div>
+            <a
+              href="https://buy.stripe.com/4gM14mfpXcIPg3UdN16J206"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 inline-flex items-center gap-2 px-6 py-3 text-sm font-bold bg-gold text-navy rounded-lg hover:bg-gold-light transition-colors shadow-sm whitespace-nowrap"
+            >
+              Book AI Audit <ArrowRight className="size-4" />
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Process Steps */}
-      <section className="py-10 md:py-14">
+      {/* ── Not ready to commit? ─────────────────────────────── */}
+      <section className="py-8 md:py-10 bg-cream border-t border-border/40">
         <div className="container">
-          <span className="text-xs font-semibold tracking-[0.2em] uppercase text-gold">
-            The Process
-          </span>
-          <h2
-            className="text-3xl md:text-4xl font-semibold text-navy mt-3 leading-tight"
-            style={{ fontFamily: "var(--font-heading)" }}
-          >
-            From idea to open doors in{" "}
-            <span className="italic text-gold">90 days.</span>
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-5 mt-6">
-            {STEPS.map((s, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-xl border border-border/60 p-6"
-              >
-                <p
-                  className="text-4xl font-semibold text-gold/40 mb-4"
-                  style={{ fontFamily: "var(--font-heading)" }}
-                >
-                  {s.num}
-                </p>
-                <h3 className="text-base font-semibold text-navy">{s.title}</h3>
-                <p className="text-sm text-navy/50 mt-2 leading-relaxed">
-                  {s.desc}
-                </p>
-              </div>
-            ))}
+          <div className="max-w-2xl">
+            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-gold">
+              Start Here
+            </span>
+            <h2
+              className="text-2xl md:text-3xl font-semibold text-navy mt-3 leading-tight"
+              style={{ fontFamily: "var(--font-heading)" }}
+            >
+              Not ready to commit to a full program?
+            </h2>
+            <p className="mt-4 text-navy/60 leading-relaxed">
+              Start with a focused diagnostic or resource. Each is physician-specific,
+              delivered fast, and designed to give you clarity — and a clear next step.
+            </p>
+            <Link
+              to="/subscriptions"
+              className="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-navy text-white text-sm font-semibold rounded-lg hover:bg-navy/90 transition-colors"
+            >
+              Browse self-serve resources <ArrowRight className="size-4" />
+            </Link>
           </div>
         </div>
       </section>
-
-      {/* Entry-Level Products */}
-      <DiagnosticProducts />
-
-      {/* Guides & Resources */}
-      <GuidesResources />
 
       <CTABanner />
     </div>
