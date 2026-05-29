@@ -56,7 +56,7 @@ export function ServicesPage() {
   useSEO({
     title: "Services",
     description:
-      "Expert consulting services for physicians launching DPC, concierge, and cash-based practices. From business formation to patient acquisition.",
+      "Work directly with Dr. Ekene Ajufo to launch your DPC or concierge practice. Choose from a Strategy Session ($250), Practice Launch ($3,500), or Monthly Advisory ($750/mo) — all with hands-on guidance and a clear 90-day path.",
     path: "/services",
   });
 

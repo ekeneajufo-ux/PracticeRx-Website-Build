@@ -43,7 +43,7 @@
       "name": "PracticeRx Consulting",
       "description": "PracticeRx Consulting helps physicians launch profitable DPC and concierge practices in 90 days with expert guidance on business formation, membership pricing, EMR selection, and patient acquisition.",
       "url": "https://practicerxconsulting.com",
-      "logo": "https://practicerxconsulting.com/og-image.png",
+      "logo": "https://practicerxconsulting.com/icon-192.png",
       "serviceType": ["Healthcare Consulting", "DPC Practice Consulting", "Concierge Practice Consulting"],
       "areaServed": {
         "@type": "Country",
@@ -72,6 +72,61 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Structured Data: Person (Dr. Ajufo) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ekene Ajufo",
+      "honorificPrefix": "Dr.",
+      "honorificSuffix": "MD, FAAP",
+      "jobTitle": "Physician Consultant & DPC Coach",
+      "description": "Board-certified pediatrician and founder of PracticeRx Consulting. Helps physicians launch DPC and concierge practices.",
+      "url": "https://practicerxconsulting.com/about",
+      "image": "https://practicerxconsulting.com/og-image.png",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "PracticeRx Consulting",
+        "url": "https://practicerxconsulting.com"
+      },
+      "sameAs": ["https://www.linkedin.com/in/drajufo"]
+    }
+    </script>
+
+    <!-- Structured Data: FAQPage for common DPC questions -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does it take to launch a DPC practice?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most physicians can launch a direct primary care practice in 60–90 days with the right guidance. PracticeRx's Practice Launch program is specifically designed to get you from concept to doors-open in 90 days."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does it cost to start a DPC practice?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Startup costs for a DPC practice typically range from $5,000–$30,000 depending on location, EMR choice, and whether you're converting an existing practice or starting fresh. Many DPC physicians break even within 3–6 months."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Direct Primary Care (DPC)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Direct Primary Care is a healthcare model where physicians charge patients a monthly membership fee for unlimited primary care access — no insurance billing required. This model allows for smaller patient panels, longer visits, and significantly less administrative overhead."
+          }
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

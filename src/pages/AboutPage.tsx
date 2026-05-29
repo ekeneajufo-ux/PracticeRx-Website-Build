@@ -43,7 +43,7 @@ const CREDENTIALS = [
 export function AboutPage() {
   useSEO({
     title: "About Dr. Ekene Ajufo",
-    description: "Meet Dr. Ekene Ajufo, board-certified pediatrician and founder of PracticeRx Consulting. Helping physicians build thriving cash-based practices.",
+    description: "Dr. Ekene Ajufo, MD, FAAP is a board-certified pediatrician, DPC consultant, and AI healthcare strategist. He has helped 40+ physicians launch independent practices and speaks nationally on the future of physician entrepreneurship.",
     path: "/about",
   });
   return (

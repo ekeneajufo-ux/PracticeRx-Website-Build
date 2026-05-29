@@ -1,8 +1,7 @@
 {
-  "installCommand": "npm install --legacy-peer-deps",
   "rewrites": [
     {
-      "source": "/((?!assets/|robots\\.txt|sitemap\\.xml|llms\\.txt|BingSiteAuth\\.xml|favicon\\.png|apple-touch-icon\\.png|icon-192\\.png|icon-512\\.png|og-image\\.png|dpc-trends-report-2026\\.pdf|dpc-employer-playbook\\.pdf).*)",
+      "source": "/((?!assets/|favicon|icon|og-image|apple-touch|physician-roadmap|hero-clinic|sitemap|robots|.*\\.(?:png|jpg|jpeg|gif|webp|svg|ico|xml|txt)).*)",
       "destination": "/index.html"
     }
   ]

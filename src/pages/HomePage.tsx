@@ -35,13 +35,19 @@ function HeroSection() {
               need to build a thriving independent practice — without the
               burnout.
             </p>
-            <div className="mt-8">
+            <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <Link
                 to="/guide"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-bold bg-gold text-navy rounded-lg hover:bg-gold-light transition-colors shadow-md hover:shadow-lg"
               >
                 <Download className="size-5" />
                 Download Free Launch Guide
+              </Link>
+              <Link
+                to="/book"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-navy border-2 border-navy/20 rounded-lg hover:bg-navy/5 transition-colors"
+              >
+                Book a Free Discovery Call
               </Link>
             </div>
             {/* Trusted by badge */}
