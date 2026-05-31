@@ -211,6 +211,7 @@ function ServicesSection() {
         "Done-with-you implementation",
       ],
       cta: "Apply now",
+      href: "https://funnels.practicerxconsulting.com/12weekfunnelconsulting",
       featured: true,
     },
     {
@@ -285,16 +286,23 @@ function ServicesSection() {
                   </li>
                 ))}
               </ul>
+              {plan.featured ? (
+              <a
+                href={plan.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 block w-full text-center px-5 py-2.5 text-sm font-semibold rounded-lg transition-colors bg-gold text-navy hover:bg-gold-light"
+              >
+                {plan.cta}
+              </a>
+            ) : (
               <Link
                 to="/contact"
-                className={`mt-6 block w-full text-center px-5 py-2.5 text-sm font-semibold rounded-lg transition-colors ${
-                  plan.featured
-                    ? "bg-gold text-navy hover:bg-gold-light"
-                    : "bg-navy text-white hover:bg-navy-light"
-                }`}
+                className="mt-6 block w-full text-center px-5 py-2.5 text-sm font-semibold rounded-lg transition-colors bg-navy text-white hover:bg-navy-light"
               >
                 {plan.cta}
               </Link>
+            )}
             </div>
           ))}
         </div>
