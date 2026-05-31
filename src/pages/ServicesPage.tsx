@@ -32,7 +32,7 @@ const PLANS = [
       "Done-with-you implementation",
     ],
     cta: "Apply now",
-    href: "/contact",
+    href: "https://funnels.practicerxconsulting.com/12weekfunnelconsulting",
     featured: true,
   },
   {
