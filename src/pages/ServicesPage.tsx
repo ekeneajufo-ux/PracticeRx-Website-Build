@@ -16,7 +16,7 @@ const PLANS = [
       "Action items in 24 hours",
     ],
     cta: "Book session",
-    href: "/contact",
+    href: "https://funnels.practicerxconsulting.com/strategysession",
     featured: false,
   },
   {
@@ -90,12 +90,14 @@ export function ServicesPage() {
                 >
                   I want done-with-you coaching
                 </a>
-                <Link
-                  to="/subscriptions"
+                <a
+                  href="https://funnels.practicerxconsulting.com/aiworkflowdigest"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-navy/20 text-navy text-sm font-semibold hover:bg-cream transition-colors"
                 >
                   I want a self-serve resource <ArrowRight className="size-3.5" />
-                </Link>
+                </a>
               </div>
             </div>
 
@@ -169,16 +171,31 @@ export function ServicesPage() {
                     </li>
                   ))}
                 </ul>
-                <Link
-                  to={plan.href}
-                  className={`mt-6 block w-full text-center px-5 py-2.5 text-sm font-semibold rounded-lg transition-colors ${
-                    plan.featured
-                      ? "bg-gold text-navy hover:bg-gold-light"
-                      : "bg-navy text-white hover:bg-navy-light"
-                  }`}
-                >
-                  {plan.cta}
-                </Link>
+                {plan.href.startsWith("http") ? (
+                  <a
+                    href={plan.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`mt-6 block w-full text-center px-5 py-2.5 text-sm font-semibold rounded-lg transition-colors ${
+                      plan.featured
+                        ? "bg-gold text-navy hover:bg-gold-light"
+                        : "bg-navy text-white hover:bg-navy-light"
+                    }`}
+                  >
+                    {plan.cta}
+                  </a>
+                ) : (
+                  <Link
+                    to={plan.href}
+                    className={`mt-6 block w-full text-center px-5 py-2.5 text-sm font-semibold rounded-lg transition-colors ${
+                      plan.featured
+                        ? "bg-gold text-navy hover:bg-gold-light"
+                        : "bg-navy text-white hover:bg-navy-light"
+                    }`}
+                  >
+                    {plan.cta}
+                  </Link>
+                )}
               </div>
             ))}
           </div>
@@ -239,12 +256,14 @@ export function ServicesPage() {
               Start with a focused diagnostic or resource. Each is physician-specific,
               delivered fast, and designed to give you clarity — and a clear next step.
             </p>
-            <Link
-              to="/subscriptions"
+            <a
+              href="https://funnels.practicerxconsulting.com/aiworkflowdigest"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-navy text-white text-sm font-semibold rounded-lg hover:bg-navy/90 transition-colors"
             >
               Browse self-serve resources <ArrowRight className="size-4" />
-            </Link>
+            </a>
           </div>
         </div>
       </section>
