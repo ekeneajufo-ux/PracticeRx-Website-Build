@@ -47,7 +47,7 @@ const PLANS = [
       "Quarterly growth plan",
     ],
     cta: "Get started",
-    href: "/contact",
+    href: "https://funnels.practicerxconsulting.com/monthlysessions-page",
     featured: false,
   },
 ];
