@@ -229,7 +229,7 @@ function ServicesSection() {
         "Quarterly growth plan",
       ],
       cta: "Get started",
-      href: "/contact",
+      href: "https://funnels.practicerxconsulting.com/monthlysessions-page",
       featured: false,
     },
   ];
@@ -290,31 +290,18 @@ function ServicesSection() {
                   </li>
                 ))}
               </ul>
-              {plan.href.startsWith("http") ? (
-                <a
-                  href={plan.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`mt-6 block w-full text-center px-5 py-2.5 text-sm font-semibold rounded-lg transition-colors ${
-                    plan.featured
-                      ? "bg-gold text-navy hover:bg-gold-light"
-                      : "bg-navy text-white hover:bg-navy-light"
-                  }`}
-                >
-                  {plan.cta}
-                </a>
-              ) : (
-                <Link
-                  to={plan.href}
-                  className={`mt-6 block w-full text-center px-5 py-2.5 text-sm font-semibold rounded-lg transition-colors ${
-                    plan.featured
-                      ? "bg-gold text-navy hover:bg-gold-light"
-                      : "bg-navy text-white hover:bg-navy-light"
-                  }`}
-                >
-                  {plan.cta}
-                </Link>
-              )}
+              <a
+                href={plan.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`mt-6 block w-full text-center px-5 py-2.5 text-sm font-semibold rounded-lg transition-colors ${
+                  plan.featured
+                    ? "bg-gold text-navy hover:bg-gold-light"
+                    : "bg-navy text-white hover:bg-navy-light"
+                }`}
+              >
+                {plan.cta}
+              </a>
             </div>
           ))}
         </div>
