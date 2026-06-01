@@ -43,12 +43,14 @@ function HeroSection() {
                 <Download className="size-5" />
                 Download Free Launch Guide
               </Link>
-              <Link
-                to="/book"
+              <a
+                href="https://funnels.practicerxconsulting.com/strategysession"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-navy border-2 border-navy/20 rounded-lg hover:bg-navy/5 transition-colors"
               >
                 Book a Free Discovery Call
-              </Link>
+              </a>
             </div>
             {/* Trusted by badge */}
             <div className="mt-6 flex items-center gap-3">
@@ -196,6 +198,7 @@ function ServicesSection() {
         "Action items in 24 hours",
       ],
       cta: "Book session",
+      href: "https://funnels.practicerxconsulting.com/strategysession",
       featured: false,
     },
     {
@@ -226,6 +229,7 @@ function ServicesSection() {
         "Quarterly growth plan",
       ],
       cta: "Get started",
+      href: "/contact",
       featured: false,
     },
   ];
@@ -286,23 +290,31 @@ function ServicesSection() {
                   </li>
                 ))}
               </ul>
-              {plan.featured ? (
-              <a
-                href={plan.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 block w-full text-center px-5 py-2.5 text-sm font-semibold rounded-lg transition-colors bg-gold text-navy hover:bg-gold-light"
-              >
-                {plan.cta}
-              </a>
-            ) : (
-              <Link
-                to="/contact"
-                className="mt-6 block w-full text-center px-5 py-2.5 text-sm font-semibold rounded-lg transition-colors bg-navy text-white hover:bg-navy-light"
-              >
-                {plan.cta}
-              </Link>
-            )}
+              {plan.href.startsWith("http") ? (
+                <a
+                  href={plan.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`mt-6 block w-full text-center px-5 py-2.5 text-sm font-semibold rounded-lg transition-colors ${
+                    plan.featured
+                      ? "bg-gold text-navy hover:bg-gold-light"
+                      : "bg-navy text-white hover:bg-navy-light"
+                  }`}
+                >
+                  {plan.cta}
+                </a>
+              ) : (
+                <Link
+                  to={plan.href}
+                  className={`mt-6 block w-full text-center px-5 py-2.5 text-sm font-semibold rounded-lg transition-colors ${
+                    plan.featured
+                      ? "bg-gold text-navy hover:bg-gold-light"
+                      : "bg-navy text-white hover:bg-navy-light"
+                  }`}
+                >
+                  {plan.cta}
+                </Link>
+              )}
             </div>
           ))}
         </div>
