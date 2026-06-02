@@ -55,7 +55,7 @@ const PRODUCTS: Product[] = [
       "45-min strategy call",
     ],
     price: 247,
-    checkoutUrl: "https://buy.stripe.com/14A4gygu18szcRI6kz6J202",
+    checkoutUrl: "https://funnels.practicerxconsulting.com/audit-page",
   },
 ];
 
