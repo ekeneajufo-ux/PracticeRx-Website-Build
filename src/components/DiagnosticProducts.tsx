@@ -40,7 +40,7 @@ const PRODUCTS: Product[] = [
       "60-min walkthrough call",
     ],
     price: 297,
-    checkoutUrl: "https://buy.stripe.com/cNi7sKelTgZ51905gv6J201",
+    checkoutUrl: "https://funnels.practicerxconsulting.com/pricingmodeler-page",
   },
   {
     tag: "Marketing",
