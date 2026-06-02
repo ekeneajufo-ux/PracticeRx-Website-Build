@@ -1,7 +1,7 @@
 import { Check, BookOpen } from "lucide-react";
 
 const FM_DPC_CHECKOUT = "https://funnels.practicerxconsulting.com/familymedicinecompleteguide";
-const VACCINE_CHECKOUT = "https://buy.stripe.com/3cI14m5Pn5gn1905gv6J20b";
+const VACCINE_CHECKOUT = "https://funnels.practicerxconsulting.com/vaccineguide-page";
 const PSYCH_CHECKOUT = "https://funnels.practicerxconsulting.com/psychblueprint-page";
 
 /* ─── Cover Mockup (SVG illustration) ─── */
