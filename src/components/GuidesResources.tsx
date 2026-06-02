@@ -2,7 +2,7 @@ import { Check, BookOpen } from "lucide-react";
 
 const FM_DPC_CHECKOUT = "https://funnels.practicerxconsulting.com/familymedicinecompleteguide";
 const VACCINE_CHECKOUT = "https://buy.stripe.com/3cI14m5Pn5gn1905gv6J20b";
-const PSYCH_CHECKOUT = "https://buy.stripe.com/eVq3cu2Db7ov3h88sH6J20d";
+const PSYCH_CHECKOUT = "https://funnels.practicerxconsulting.com/psychblueprint-page";
 
 /* ─── Cover Mockup (SVG illustration) ─── */
 function GuideCover({ title, color }: { title: string; color: string }) {
