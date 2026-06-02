@@ -152,9 +152,7 @@ return (
 <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-navy/5 text-navy/60">
 {guide.tag}
 </span>
-<span
-className={`text-[11px] font-semibold px-2.5 py-1 rounded-full ${guide.badgeColor}`}
->
+<span className={`text-[11px] font-semibold px-2.5 py-1 rounded-full ${guide.badgeColor}`}>
 {guide.badge}
 </span>
 </div>
@@ -193,9 +191,7 @@ color: "var(--color-gold)",
 >
 ${guide.price}
 </p>
-<p className="text-xs text-navy/40">
-one-time · instant PDF download
-</p>
+<p className="text-xs text-navy/40">one-time · instant PDF download</p>
 </div>
 <a
 href={guide.checkoutUrl}
@@ -208,8 +204,7 @@ Get the Guide →
 </a>
 </div>
 <p className="text-xs text-navy/35 italic mt-3">
-Written by Dr. Ekene Ajufo, MD · Practicing physician · Instant
-download
+Written by Dr. Ekene Ajufo, MD · Practicing physician · Instant download
 </p>
 </div>
 </div>
@@ -246,4 +241,4 @@ legal, and operational details that matter most.
 </div>
 </section>
 );
-  }
+}
