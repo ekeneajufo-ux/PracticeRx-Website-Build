@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import { JsonLd } from "../components/JsonLd";
 import { useSEO } from "../hooks/useSEO";
 
-/* ─── Stripe Payment Link ─── */
+/* ─── GHL Funnel Link ─── */
 const GUIDE_CHECKOUT_URL =
-  "https://buy.stripe.com/3cI14m5Pn5gn1905gv6J20b";
+  "https://funnels.practicerxconsulting.com/vaccineguide-page";
 
 /* ─── Guide CTA Block ─── */
 function GuideCTA() {
