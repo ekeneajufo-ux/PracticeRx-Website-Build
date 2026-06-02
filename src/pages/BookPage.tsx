@@ -1,16 +1,9 @@
 import { useSEO } from "../hooks/useSEO";
-import {
-  Calendar,
-  CheckCircle2,
-  Clock,
-  ExternalLink,
-  Video,
-} from "lucide-react";
-import { useState } from "react";
+import { useEffect } from "react";
+import { Calendar, CheckCircle2, Clock, Video } from "lucide-react";
 
-const CALENDAR_URL =
-  "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0TSo1bXisALH7Tnm-JjZOnomMBvd5DmWW78jgr2JIEpYeOpeM1pu0YsK6HsHoqqwxewefsjBTk?gv=true";
-const CALENDAR_SHORT_URL = "https://calendar.app.google/MLbgWaZ5UZRoVb8c7";
+const GHL_BOOKING_ID = "zJJlFYvoh91wx0N63jM7";
+const GHL_CALENDAR_SRC = `https://api.leadconnectorhq.com/widget/booking/${GHL_BOOKING_ID}`;
 
 export function BookPage() {
   useSEO({
@@ -18,7 +11,33 @@ export function BookPage() {
     description: "Schedule a free 30-minute discovery call with Dr. Ekene Ajufo to discuss launching your DPC, concierge, or cash-based practice.",
     path: "/book",
   });
-  const [iframeError, setIframeError] = useState(false);
+
+  // Load GHL embed script
+  useEffect(() => {
+    const existing = document.querySelector('script[src="https://link.msgsndr.com/js/form_embed.js"]');
+    if (!existing) {
+      const script = document.createElement("script");
+      script.src = "https://link.msgsndr.com/js/form_embed.js";
+      script.async = true;
+      document.body.appendChild(script);
+    }
+
+    // Listen for GHL height resize messages
+    const handleMessage = (event: MessageEvent) => {
+      if (
+        event.data.type === "HSFormCollected" ||
+        event.data.type === "bookingFormCollected"
+      ) {
+        const iframe = document.getElementById(`msgsndr-calendar-${GHL_BOOKING_ID}`) as HTMLIFrameElement;
+        if (iframe && event.data.value) {
+          iframe.style.height = event.data.value + "px";
+        }
+      }
+    };
+
+    window.addEventListener("message", handleMessage);
+    return () => window.removeEventListener("message", handleMessage);
+  }, []);
 
   return (
     <div className="flex flex-col">
@@ -56,44 +75,17 @@ export function BookPage() {
                 a Zoom link.
               </p>
 
-              {/* Primary: direct link button (always works) */}
-              <a
-                href={CALENDAR_SHORT_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mb-5 flex items-center justify-center gap-2 w-full px-6 py-3.5 text-sm font-semibold bg-gold text-navy rounded-lg hover:bg-gold-light transition-colors shadow-sm"
-              >
-                <Calendar className="size-4" />
-                Open Scheduling Calendar
-                <ExternalLink className="size-3.5" />
-              </a>
-
-              {/* Iframe embed (may not work in all environments) */}
-              {!iframeError && (
-                <div className="rounded-xl border border-border/60 overflow-hidden bg-white">
-                  <iframe
-                    src={CALENDAR_URL}
-                    style={{ border: 0, width: "100%", height: "680px" }}
-                    title="Book a Discovery Call with Dr. Ajufo"
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    allow="clipboard-write"
-                    onError={() => setIframeError(true)}
-                  />
-                </div>
-              )}
-
-              {iframeError && (
-                <div className="rounded-xl border border-border/60 bg-white p-12 text-center">
-                  <Calendar className="size-10 text-gold mx-auto mb-4" />
-                  <p className="text-navy/60 text-sm">
-                    Calendar preview unavailable in this browser.
-                  </p>
-                  <p className="text-navy/60 text-sm mt-1">
-                    Use the button above to open the scheduling page directly.
-                  </p>
-                </div>
-              )}
+              {/* GHL Calendar Widget */}
+              <div className="rounded-xl border border-border/60 overflow-hidden bg-white">
+                <iframe
+                  id={`msgsndr-calendar-${GHL_BOOKING_ID}`}
+                  src={GHL_CALENDAR_SRC}
+                  style={{ width: "100%", height: "700px", border: "none", overflow: "hidden" }}
+                  scrolling="no"
+                  title="Book a Discovery Call with Dr. Ekene Ajufo"
+                  loading="lazy"
+                />
+              </div>
 
               <p className="text-xs text-muted-foreground mt-3 text-center">
                 Having trouble?{" "}
@@ -120,6 +112,7 @@ export function BookPage() {
                   {[
                     { icon: Clock, label: "30-minute focused session" },
                     { icon: Video, label: "Video call" },
+                    { icon: Calendar, label: "Instant confirmation email" },
                   ].map((item) => (
                     <div key={item.label} className="flex items-center gap-3">
                       <div className="w-9 h-9 rounded-lg bg-gold/10 flex items-center justify-center shrink-0">
