@@ -1,4 +1,4 @@
-import { Check, Clock, ShoppingCart, Sparkles } from "lucide-react";
+import { Check, Clock, ShoppingCart } from "lucide-react";
 
 interface Product {
   tag: string;
@@ -58,15 +58,6 @@ const PRODUCTS: Product[] = [
     checkoutUrl: "https://funnels.practicerxconsulting.com/audit-page",
   },
 ];
-
-const BUNDLE = {
-  name: "Practice Readiness + Revenue Modeler Bundle",
-  originalPrice: 494,
-  price: 397,
-  savings: 97,
-  checkoutUrl: "https://buy.stripe.com/9B6eVc2DbbEL1909wL6J205",
-  includes: ["Practice Readiness Assessment ($197)", "DPC Revenue & Pricing Modeler ($297)"],
-};
 
 function ProductCard({ product }: { product: Product }) {
   return (
@@ -155,59 +146,6 @@ export function DiagnosticProducts() {
           {PRODUCTS.map((product, i) => (
             <ProductCard key={i} product={product} />
           ))}
-        </div>
-
-        {/* Bundle & Save Banner */}
-        <div className="mt-8 rounded-xl border-2 border-gold/40 bg-gradient-to-r from-gold/5 to-gold/10 p-6 md:p-8">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-            <div className="flex-1">
-              <div className="flex items-center gap-2 mb-2">
-                <Sparkles className="size-5 text-gold" />
-                <span className="text-sm font-bold text-gold uppercase tracking-wider">
-                  Bundle &amp; Save
-                </span>
-              </div>
-              <h3
-                className="text-xl md:text-2xl font-semibold text-navy leading-snug"
-                style={{ fontFamily: "var(--font-heading)" }}
-              >
-                {BUNDLE.name}
-              </h3>
-              <ul className="mt-3 space-y-1">
-                {BUNDLE.includes.map((item, i) => (
-                  <li key={i} className="flex items-center gap-2">
-                    <Check className="size-3.5 text-gold shrink-0" />
-                    <span className="text-sm text-navy/65">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="flex flex-col items-center md:items-end gap-3 shrink-0">
-              <div className="text-center md:text-right">
-                <span className="text-sm text-navy/40 line-through">
-                  ${BUNDLE.originalPrice}
-                </span>
-                <p
-                  className="text-3xl font-bold text-navy"
-                  style={{ fontFamily: "var(--font-heading)" }}
-                >
-                  ${BUNDLE.price}
-                </p>
-                <p className="text-sm font-semibold text-green-600">
-                  Save ${BUNDLE.savings}
-                </p>
-              </div>
-              <a
-                href={BUNDLE.checkoutUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 text-sm font-bold bg-navy text-white rounded-lg hover:bg-navy-light transition-colors"
-              >
-                <ShoppingCart className="size-4" />
-                Buy Bundle
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </section>
