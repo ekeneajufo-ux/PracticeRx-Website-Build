@@ -372,7 +372,7 @@ const scopedStyles = `
   }
 `;
 
-const STRIPE_LINK = "https://buy.stripe.com/eVq3cu2Db7ov3h88sH6J20d";
+const CHECKOUT_LINK = "https://funnels.practicerxconsulting.com/psychblueprint-page";
 
 export function PsychiatryProductPage() {
   useSEO({
@@ -430,7 +430,7 @@ export function PsychiatryProductPage() {
             </div>
           </div>
           <br />
-          <a href={STRIPE_LINK} className="buy-btn-hero" target="_blank" rel="noopener noreferrer">
+          <a href={CHECKOUT_LINK} className="buy-btn-hero" target="_blank" rel="noopener noreferrer">
             Get the Blueprint Now →
           </a>
           <div className="hero-trust">Instant access · PDF format · Physician-authored · No subscription</div>
@@ -561,11 +561,11 @@ export function PsychiatryProductPage() {
             <div className="buy-card">
               <div className="buy-card-price">$499</div>
               <div className="buy-card-label">One-time purchase · No subscription</div>
-              <a href={STRIPE_LINK} className="buy-btn" target="_blank" rel="noopener noreferrer">
+              <a href={CHECKOUT_LINK} className="buy-btn" target="_blank" rel="noopener noreferrer">
                 Get Instant Access →
               </a>
               <div className="buy-card-trust">
-                Secure checkout via Stripe<br />
+                Secure checkout<br />
                 PDF delivered instantly by email<br />
                 30-day satisfaction guarantee
               </div>
@@ -611,7 +611,7 @@ export function PsychiatryProductPage() {
               One purchase. Eight modules. Everything you need to stop waiting and start building.
             </p>
             <a
-              href={STRIPE_LINK}
+              href={CHECKOUT_LINK}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-8 py-3.5 text-sm font-bold text-navy rounded-lg transition-all hover:brightness-110"
