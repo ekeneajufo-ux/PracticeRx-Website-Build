@@ -1,9 +1,1 @@
-{
-  "installCommand": "npm install --legacy-peer-deps",
-  "rewrites": [
-    {
-      "source": "/((?!assets/|favicon|icon|og-image|apple-touch|physician-roadmap|hero-clinic|sitemap|robots|.*\\.(?:png|jpg|jpeg|gif|webp|svg|ico|xml|txt)).*)",
-      "destination": "/index.html"
-    }
-  ]
-}
+ewogICJpbnN0YWxsQ29tbWFuZCI6ICJucG0gaW5zdGFsbCAtLWxlZ2FjeS1wZWVyLWRlcHMiLAogICJyZXdyaXRlcyI6IFsKICAgIHsKICAgICAgInNvdXJjZSI6ICIvKCg/IWFwaS98YXNzZXRzL3xmYXZpY29ufGljb258b2ctaW1hZ2V8YXBwbGUtdG91Y2h8cGh5c2ljaWFuLXJvYWRtYXB8aGVyby1jbGluaWN8c2l0ZW1hcHxyb2JvdHN8LipcXC4oPzpwbmd8anBnfGpwZWd8Z2lmfHdlYnB8c3ZnfGljb3x4bWx8dHh0KSkuKikiLAogICAgICAiZGVzdGluYXRpb24iOiAiL2luZGV4Lmh0bWwiCiAgICB9CiAgXQp9Cg==
