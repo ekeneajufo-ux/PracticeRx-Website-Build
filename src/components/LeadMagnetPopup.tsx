@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 import { Button } from "./ui/button";
 
-// !! REPLACE with your GoHighLevel guide download link !!
-const GHL_GUIDE_LINK = "YOUR_GHL_GUIDE_DOWNLOAD_LINK";
+const GHL_GUIDE_LINK = "https://funnels.practicerxconsulting.com/freeguide-page";
 
 export function LeadMagnetPopup() {
   const [open, setOpen] = useState(false);
