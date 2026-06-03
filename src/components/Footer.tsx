@@ -77,9 +77,25 @@ export function Footer() {
           <p className="text-xs text-white/40">
             © {new Date().getFullYear()} PracticeRx. All rights reserved.
           </p>
-          <p className="text-xs text-white/40">
-            Built for independent physicians.
-          </p>
+          <div className="flex items-center gap-4">
+            <a
+              href="https://funnels.practicerxconsulting.com/privacypolicy-page"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-white/40 hover:text-gold transition-colors"
+            >
+              Privacy Policy
+            </a>
+            <span className="text-white/20 text-xs">|</span>
+            <a
+              href="https://funnels.practicerxconsulting.com/terms-conditions-page"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-white/40 hover:text-gold transition-colors"
+            >
+              Terms of Service
+            </a>
+          </div>
         </div>
       </div>
     </footer>
