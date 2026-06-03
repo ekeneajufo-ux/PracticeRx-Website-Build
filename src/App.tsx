@@ -1,4 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { PublicLayout } from "./components/PublicLayout";
 import { Toaster } from "./components/ui/sonner";
@@ -8,7 +9,6 @@ import { HomePage } from "./pages/HomePage";
 import { ServicesPage } from "./pages/ServicesPage";
 import { AboutPage } from "./pages/AboutPage";
 import { ResourcesPage } from "./pages/ResourcesPage";
-import { GuidePage } from "./pages/GuidePage";
 import { ContactPage } from "./pages/ContactPage";
 import { BlogPostPage } from "./pages/BlogPostPage";
 import { VaccineCostsBlogPage } from "./pages/VaccineCostsBlogPage";
@@ -20,6 +20,13 @@ import { BookPage } from "./pages/BookPage";
 import { ThankYouPage } from "./pages/ThankYouPage";
 import { SubscriptionsPage } from "./pages/SubscriptionsPage";
 import { FindAProviderPage } from "./pages/FindAProviderPage";
+
+function ExternalRedirect({ to }: { to: string }) {
+  useEffect(() => {
+    window.location.href = to;
+  }, [to]);
+  return null;
+}
 
 function App() {
   return (
@@ -33,7 +40,7 @@ function App() {
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/resources" element={<Navigate to="/blog" replace />} />
-            <Route path="/guide" element={<GuidePage />} />
+            <Route path="/guide" element={<ExternalRedirect to="https://funnels.practicerxconsulting.com/freeguide-page" />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/subscriptions" element={<SubscriptionsPage />} />
             <Route path="/blog/vaccine-costs-pediatric-dpc" element={<VaccineCostsBlogPage />} />
