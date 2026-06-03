@@ -342,7 +342,7 @@ function LeadMagnetSection() {
                 "Membership agreement template",
               ].map((item, i) => (
                 <li key={i} className="flex items-center gap-3">
-                  <span className="text-gold font-bold">&check;</span>
+                  <Check className="size-4 text-gold shrink-0" />
                   <span className="text-sm text-navy/70">{item}</span>
                 </li>
               ))}
@@ -360,7 +360,7 @@ function LeadMagnetSection() {
             </div>
           </div>
 
-          {/* Right column &mdash; Guide cover mockup */}
+          {/* Right column — Guide cover mockup */}
           <div className="flex items-center justify-center">
             <div className="relative w-[280px] md:w-[320px]">
               {/* Shadow / depth */}
@@ -422,7 +422,7 @@ function FounderSection() {
           <div className="flex justify-center md:justify-start">
             <img
               src="/dr-ajufo-circle.png"
-              alt="Dr. Ekene Ajufo, MD, FAAP &mdash; Founder of PracticeRx Consulting"
+              alt="Dr. Ekene Ajufo, MD, FAAP — Founder of PracticeRx Consulting"
               className="w-72 md:w-80 lg:w-96 h-auto drop-shadow-lg"
             />
           </div>
