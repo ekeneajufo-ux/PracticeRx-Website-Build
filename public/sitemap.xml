@@ -21,11 +21,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://practicerxconsulting.com/guide</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://practicerxconsulting.com/subscriptions</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -43,7 +38,12 @@
   <url>
     <loc>https://practicerxconsulting.com/book</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://practicerxconsulting.com/products/psychiatry-cash-practice-blueprint</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://practicerxconsulting.com/blog/vaccine-costs-pediatric-dpc</loc>
