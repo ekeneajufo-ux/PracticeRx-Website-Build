@@ -1,4 +1,4 @@
-import { Check, Brain, ArrowRight } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useSEO } from "../hooks/useSEO";
 import { CTABanner } from "../components/CTABanner";
@@ -198,43 +198,6 @@ export function ServicesPage() {
                 )}
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── AI Audit Callout ─────────────────────────────────── */}
-      <section className="py-8 md:py-10">
-        <div className="container">
-          <div className="rounded-xl border border-purple-200/60 bg-gradient-to-br from-purple-50/40 to-white p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center gap-6 justify-between">
-            <div className="flex items-start gap-4">
-              <div className="w-11 h-11 rounded-xl bg-purple-100 flex items-center justify-center shrink-0">
-                <Brain className="size-6 text-purple-600" />
-              </div>
-              <div>
-                <p className="text-xs font-semibold tracking-widest uppercase text-purple-600 mb-1">
-                  AI &amp; Productivity
-                </p>
-                <h3
-                  className="text-xl font-semibold text-navy"
-                  style={{ fontFamily: "var(--font-heading)" }}
-                >
-                  AI Workflow Audit — $497
-                </h3>
-                <p className="text-sm text-navy/55 mt-1 max-w-lg leading-relaxed">
-                  A done-with-you audit identifying the top 10 tasks AI can handle
-                  in your clinical and personal workflow — with custom tool
-                  recommendations and a 25-prompt physician library.
-                </p>
-              </div>
-            </div>
-            <a
-              href="https://buy.stripe.com/4gM14mfpXcIPg3UdN16J206"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="shrink-0 inline-flex items-center gap-2 px-6 py-3 text-sm font-bold bg-gold text-navy rounded-lg hover:bg-gold-light transition-colors shadow-sm whitespace-nowrap"
-            >
-              Book AI Audit <ArrowRight className="size-4" />
-            </a>
           </div>
         </div>
       </section>
