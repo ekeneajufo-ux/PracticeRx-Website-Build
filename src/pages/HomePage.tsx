@@ -1,5 +1,4 @@
 import { Check, Clock, Flame, DollarSign, Download } from "lucide-react";
-import { Link } from "react-router-dom";
 import { useSEO } from "../hooks/useSEO";
 import { CTABanner } from "../components/CTABanner";
 import { FAQSection } from "../components/FAQSection";
@@ -34,7 +33,7 @@ function HeroSection() {
             </h1>
             <p className="mt-6 text-base md:text-lg text-navy/60 max-w-lg leading-relaxed">
               A proven playbook, hands-on coaching, and the AI-powered tools you
-              need to build a thriving independent practice — without the
+              need to build a thriving independent practice &mdash; without the
               burnout.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
@@ -333,7 +332,7 @@ function LeadMagnetSection() {
               <span className="italic text-gold">Launch Guide.</span>
             </h2>
             <p className="mt-4 text-navy/60 text-base md:text-lg leading-relaxed">
-              Everything you need to open your doors — in one place.
+              Everything you need to open your doors &mdash; in one place.
             </p>
             <ul className="mt-6 space-y-3">
               {[
@@ -343,7 +342,7 @@ function LeadMagnetSection() {
                 "Membership agreement template",
               ].map((item, i) => (
                 <li key={i} className="flex items-center gap-3">
-                  <span className="text-gold font-bold">✓</span>
+                  <span className="text-gold font-bold">&check;</span>
                   <span className="text-sm text-navy/70">{item}</span>
                 </li>
               ))}
@@ -361,7 +360,7 @@ function LeadMagnetSection() {
             </div>
           </div>
 
-          {/* Right column — Guide cover mockup */}
+          {/* Right column &mdash; Guide cover mockup */}
           <div className="flex items-center justify-center">
             <div className="relative w-[280px] md:w-[320px]">
               {/* Shadow / depth */}
@@ -419,11 +418,11 @@ function FounderSection() {
     <section className="py-10 md:py-14">
       <div className="container">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Image — circle headshot */}
+          {/* Image */}
           <div className="flex justify-center md:justify-start">
             <img
               src="/dr-ajufo-circle.png"
-              alt="Dr. Ekene Ajufo, MD, FAAP — Founder of PracticeRx Consulting"
+              alt="Dr. Ekene Ajufo, MD, FAAP &mdash; Founder of PracticeRx Consulting"
               className="w-72 md:w-80 lg:w-96 h-auto drop-shadow-lg"
             />
           </div>
@@ -441,7 +440,7 @@ function FounderSection() {
               <span className="italic text-gold">MD, FAAP</span>
             </h2>
             <p className="mt-2 text-sm font-medium text-navy/50 tracking-wide">
-              MD · Practicing Pediatrician · AI Healthcare Business Consultant
+              MD &middot; Practicing Pediatrician &middot; AI Healthcare Business Consultant
             </p>
             <p className="mt-5 text-navy/60 leading-relaxed">
               Dr. Ekene Ajufo is a practicing pediatrician and healthcare
@@ -469,10 +468,6 @@ function FounderSection() {
     </section>
   );
 }
-
-/* ─── Process section is now in ../components/Process.tsx ─── */
-
-/* ─── Testimonial section is now in ../components/Testimonial.tsx ─── */
 
 /* ─── Main Page ─── */
 export function HomePage() {
