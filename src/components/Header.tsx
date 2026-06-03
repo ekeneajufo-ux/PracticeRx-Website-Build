@@ -41,7 +41,7 @@ export function Header() {
     ]},
     { label: "About", href: "/about" },
     { label: "Blog", href: "/blog" },
-    { label: "Free Guide", href: "/guide" },
+    { label: "Free Guide", href: "https://funnels.practicerxconsulting.com/freeguide-page", external: true },
     { label: "Contact", href: "/contact" },
     { label: "Find A Provider", href: "/find-a-provider" },
   ];
@@ -137,6 +137,16 @@ export function Header() {
                     </div>
                   )}
                 </div>
+              ) : link.external ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium transition-colors text-navy/60 hover:text-navy"
+                >
+                  {link.label}
+                </a>
               ) : (
                 <Link
                   key={link.href}
@@ -182,16 +192,27 @@ export function Header() {
           <div className="md:hidden border-t border-border/50 py-4 space-y-1">
             {navLinks.map((link) => (
               <div key={link.href}>
-                <Link
-                  to={link.href}
-                  className={`block text-sm font-medium py-2.5 px-2 rounded-lg transition-colors ${
-                    isActive(link.href)
-                      ? "text-navy bg-navy/5"
-                      : "text-navy/60 hover:text-navy hover:bg-navy/5"
-                  }`}
-                >
-                  {link.label}
-                </Link>
+                {link.external ? (
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-sm font-medium py-2.5 px-2 rounded-lg transition-colors text-navy/60 hover:text-navy hover:bg-navy/5"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    to={link.href}
+                    className={`block text-sm font-medium py-2.5 px-2 rounded-lg transition-colors ${
+                      isActive(link.href)
+                        ? "text-navy bg-navy/5"
+                        : "text-navy/60 hover:text-navy hover:bg-navy/5"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                )}
                 {link.sub?.map((subLink) => (
                   <Link
                     key={subLink.href}
