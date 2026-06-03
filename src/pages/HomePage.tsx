@@ -11,6 +11,8 @@ import { DiagnosticProducts } from "../components/DiagnosticProducts";
 import { GuidesResources } from "../components/GuidesResources";
 import { LeadMagnetPopup } from "../components/LeadMagnetPopup";
 
+const FREE_GUIDE_URL = "https://funnels.practicerxconsulting.com/freeguide-page";
+
 /* ─── Hero ─── */
 function HeroSection() {
   return (
@@ -36,13 +38,15 @@ function HeroSection() {
               burnout.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
-              <Link
-                to="/guide"
+              <a
+                href={FREE_GUIDE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-bold bg-gold text-navy rounded-lg hover:bg-gold-light transition-colors shadow-md hover:shadow-lg"
               >
                 <Download className="size-5" />
                 Download Free Launch Guide
-              </Link>
+              </a>
               <a
                 href="https://funnels.practicerxconsulting.com/strategysession"
                 target="_blank"
@@ -345,13 +349,15 @@ function LeadMagnetSection() {
               ))}
             </ul>
             <div className="mt-8">
-              <Link
-                to="/guide"
+              <a
+                href={FREE_GUIDE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-bold bg-gold text-navy rounded-lg hover:bg-gold-light transition-colors shadow-md hover:shadow-lg"
               >
                 <Download className="size-5" />
                 Download Free Guide
-              </Link>
+              </a>
             </div>
           </div>
 
