@@ -1,1 +1,5 @@
-ewogICJpbnN0YWxsQ29tbWFuZCI6ICJucG0gaW5zdGFsbCAtLWxlZ2FjeS1wZWVyLWRlcHMiLAogICJyZXdyaXRlcyI6IFsKICAgIHsgInNvdXJjZSI6ICIvKC4qKSIsICJkZXN0aW5hdGlvbiI6ICIvaW5kZXguaHRtbCIgfQogIF0KfQo=
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
