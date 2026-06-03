@@ -1,5 +1,4 @@
-import { Stethoscope, FileText, Megaphone, Home } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Stethoscope, FileText, Megaphone, Home, Check } from "lucide-react";
 
 const USE_CASES = [
   {
@@ -24,6 +23,13 @@ const USE_CASES = [
   },
 ];
 
+const DIGEST_FEATURES = [
+  "Weekly AI tool picks for physicians",
+  "Prompt templates for clinical & admin tasks",
+  "Workflow automations you can implement same-day",
+  "Real-world case studies from independent practices",
+];
+
 export function AIForPhysicians() {
   return (
     <section className="py-12 md:py-16 bg-white">
@@ -43,28 +49,32 @@ export function AIForPhysicians() {
             </h2>
             <p className="mt-5 text-navy/60 leading-relaxed">
               From ambient clinical documentation to automated prior auth
-              appeals, AI tools are saving independent physicians 5–10 hours per
-              week. Dr. Ajufo helps you identify exactly where AI fits into your
-              clinical workflow and your personal life — and sets it up with you
-              so it actually gets used.
+              appeals, AI tools are saving independent physicians 5&ndash;10 hours per
+              week. The AI Workflow Digest delivers curated tools, prompt
+              templates, and real-world workflows to your inbox every week
+              &mdash; built specifically for physicians.
             </p>
 
-            {/* CTAs */}
-            <div className="mt-8 flex flex-col gap-3">
+            {/* Feature list */}
+            <ul className="mt-6 space-y-2.5">
+              {DIGEST_FEATURES.map((f, i) => (
+                <li key={i} className="flex items-start gap-2.5">
+                  <Check className="size-4 text-gold mt-0.5 shrink-0" />
+                  <span className="text-sm text-navy/70">{f}</span>
+                </li>
+              ))}
+            </ul>
+
+            {/* CTA */}
+            <div className="mt-8">
               <a
-                href="https://buy.stripe.com/4gM14mfpXcIPg3UdN16J206"
+                href="https://funnels.practicerxconsulting.com/aiworkflowdigest"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm font-bold bg-gold text-navy rounded-lg hover:bg-gold-light transition-colors shadow-md hover:shadow-lg w-fit"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm font-bold bg-gold text-navy rounded-lg hover:bg-gold-light transition-colors shadow-md hover:shadow-lg"
               >
-                Book the AI Workflow Audit — $497
+                Subscribe to the AI Workflow Digest &mdash; $39/mo
               </a>
-              <Link
-                to="/subscriptions"
-                className="text-sm font-medium text-navy/60 hover:text-gold transition-colors w-fit"
-              >
-                Or subscribe to the AI Workflow Digest — $39/mo →
-              </Link>
             </div>
           </div>
 
@@ -85,7 +95,7 @@ export function AIForPhysicians() {
                   {uc.label}
                 </h3>
                 <p className="text-xs text-navy/45 mt-1.5 leading-relaxed italic">
-                  "{uc.example}"
+                  &ldquo;{uc.example}&rdquo;
                 </p>
               </div>
             ))}
