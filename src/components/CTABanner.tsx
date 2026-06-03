@@ -28,12 +28,14 @@ export function CTABanner() {
               Book a Discovery Call
               <ArrowRight className="size-4" />
             </Link>
-            <Link
-              to="/guide"
+            <a
+              href="https://funnels.practicerxconsulting.com/freeguide-page"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-white border border-white/30 rounded-lg hover:bg-white/10 transition-colors"
             >
               Download Free Launch Guide
-            </Link>
+            </a>
           </div>
         </div>
       </div>
