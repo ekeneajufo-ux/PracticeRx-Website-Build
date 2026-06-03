@@ -22,6 +22,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
+const FREE_GUIDE_URL = "https://funnels.practicerxconsulting.com/freeguide-page";
+
 function RotatingTestimonials() {
   const testimonials = [
     {
@@ -139,9 +141,9 @@ export function LandingPage() {
                   asChild
                   className="border-gray-500 text-white hover:bg-white/10 text-base"
                 >
-                  <Link to="/resources">
+                  <a href={FREE_GUIDE_URL} target="_blank" rel="noopener noreferrer">
                     Get the Free DPC Launch Guide
-                  </Link>
+                  </a>
                 </Button>
               </div>
               {/* 3 Benefits of DPC/Concierge */}
@@ -567,7 +569,7 @@ export function LandingPage() {
                 },
                 {
                   q: "What makes PracticeRx different from other consultants?",
-                  a: "Dr. Ajufo is a practicing physician who has actually built what he teaches. He's launched practices, built a med spa, is AI-certified, and has sourced equipment internationally. This isn't theory — it's experience compressed into a 90-day roadmap.",
+                  a: "Dr. Ajufo is a practicing physician who has actually built what she teaches. She's launched practices, built a med spa, is AI-certified, and has sourced equipment internationally. This isn't theory — it's experience compressed into a 90-day roadmap.",
                 },
               ].map((faq, i) => (
                 <details
@@ -669,10 +671,10 @@ export function LandingPage() {
               asChild
               className="border-gray-500 text-white hover:bg-white/10 text-base"
             >
-              <Link to="/resources">
+              <a href={FREE_GUIDE_URL} target="_blank" rel="noopener noreferrer">
                 <BookOpen className="size-5 mr-2" />
                 Download Free DPC Guide
-              </Link>
+              </a>
             </Button>
           </div>
         </div>
@@ -714,7 +716,7 @@ export function LandingPage() {
               </h4>
               <nav className="space-y-2 text-sm">
                 <Link to="/book" className="block hover:text-gold transition-colors">Book a Discovery Call</Link>
-                <Link to="/resources" className="block hover:text-gold transition-colors">DPC Launch Guide</Link>
+                <a href={FREE_GUIDE_URL} target="_blank" rel="noopener noreferrer" className="block hover:text-gold transition-colors">DPC Launch Guide</a>
                 <a href="https://www.linkedin.com/in/drajufo" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-gold transition-colors">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-4">
                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
