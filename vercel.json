@@ -2,7 +2,7 @@
   "installCommand": "npm install --legacy-peer-deps",
   "rewrites": [
     {
-      "source": "/((?!assets/|favicon|icon|og-image|apple-touch|physician-roadmap|hero-clinic|sitemap|robots|.*\\.(?:png|jpg|jpeg|gif|webp|svg|ico|xml|txt)).*)",
+      "source": "/((?!api/|assets/|favicon|icon|og-image|apple-touch|physician-roadmap|hero-clinic|sitemap|robots|.*\\.(?:png|jpg|jpeg|gif|webp|svg|ico|xml|txt)).*)",
       "destination": "/index.html"
     }
   ]
