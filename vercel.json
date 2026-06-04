@@ -1,7 +1,9 @@
 {
   "installCommand": "npm install --legacy-peer-deps",
   "functions": {
-    "api/ghl-submit.mjs": {}
+    "api/ghl-submit.mjs": {
+      "maxDuration": 10
+    }
   },
   "rewrites": [
     {
