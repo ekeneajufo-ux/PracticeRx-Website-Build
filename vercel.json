@@ -1,13 +1,8 @@
 {
   "installCommand": "npm install --legacy-peer-deps",
-  "functions": {
-    "api/ghl-submit.mjs": {
-      "maxDuration": 10
-    }
-  },
   "rewrites": [
     {
-      "source": "/((?!api/|assets/|favicon|icon|og-image|apple-touch|physician-roadmap|hero-clinic|sitemap|robots|.*\\.(?:png|jpg|jpeg|gif|webp|svg|ico|xml|txt)).*)",
+      "source": "/((?!assets/|favicon|icon|og-image|apple-touch|physician-roadmap|hero-clinic|sitemap|robots|.*\\.(?:png|jpg|jpeg|gif|webp|svg|ico|xml|txt)).*)",
       "destination": "/index.html"
     }
   ]
