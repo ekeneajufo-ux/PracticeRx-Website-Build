@@ -3,18 +3,18 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { JsonLd } from "../components/JsonLd";
 import { useSEO } from "../hooks/useSEO";
+import blogData from "../../public/blog-data.json";
 
 /* ─── Types ─── */
 interface BlogPost {
-  _id: string;
+  id: string;
   title: string;
   slug: string;
   excerpt: string;
   content: string;
   coverImageUrl?: string;
   tags: string[];
-  published: boolean;
-  publishedAt?: number;
+  publishedAt: string;
   seoTitle?: string;
   seoDescription?: string;
 }
@@ -152,24 +152,14 @@ export function BlogPostPage() {
   const [post, setPost] = useState<BlogPost | null | undefined>(undefined);
 
   useEffect(() => {
-    if (!slug) { setPost(null); return; }
-    const convexUrl = import.meta.env.VITE_CONVEX_URL as string | undefined;
-    if (!convexUrl) { setPost(null); return; }
+    if (!slug) { 
+      setPost(null); 
+      return; 
+    }
 
-    fetch(`${convexUrl}/api/query`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        path: "blogPosts:getBySlug",
-        args: { slug },
-        format: "json",
-      }),
-    })
-      .then((r) => r.json())
-      .then((data) => {
-        setPost(data?.value ?? null);
-      })
-      .catch(() => setPost(null));
+    // Find post from static blog data
+    const foundPost = (blogData.blogs as BlogPost[]).find(p => p.slug === slug);
+    setPost(foundPost || null);
   }, [slug]);
 
   const config = slug ? ARTICLE_CONFIG[slug] : undefined;
