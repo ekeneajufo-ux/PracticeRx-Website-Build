@@ -6,6 +6,41 @@ import { api } from "./_generated/api";
 const http = httpRouter();
 auth.addHttpRoutes(http);
 
+// ── Chatbot Endpoint ──────────────────────────────────────────────
+http.route({
+  path: "/api/chatbot/chat",
+  method: "POST",
+  handler: httpAction(async (ctx, request) => {
+    try {
+      const body = await request.json();
+      const { message, conversationHistory } = body;
+
+      if (!message || typeof message !== "string") {
+        return new Response(JSON.stringify({ error: "Message is required" }), {
+          status: 400,
+          headers: { "Content-Type": "application/json" },
+        });
+      }
+
+      const result = await ctx.runAction(api.chatbot.chatWithClaude, {
+        message,
+        conversationHistory: conversationHistory || [],
+      });
+
+      return new Response(JSON.stringify({ content: result.content }), {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      });
+    } catch (e: unknown) {
+      const msg = e instanceof Error ? e.message : String(e);
+      return new Response(JSON.stringify({ error: msg }), {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+  }),
+});
+
 // Blog post automation endpoint
 http.route({
   path: "/api/blog/publish",
