@@ -1,28 +1,7 @@
 import { ArrowRight, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useSEO } from "../hooks/useSEO";
-
-/* ─── Blog Posts ─── */
-const BLOG_POSTS = [
-  {
-    slug: "family-medicine-dpc-transition",
-    category: "Family Medicine DPC",
-    title:
-      "The Family Medicine Physician's Honest Guide to Going DPC",
-    excerpt:
-      "The hard part isn't the medicine. Here's the honest version of the financial model, legal landscape, and patient acquisition conversation.",
-    readTime: "7 min read",
-  },
-  {
-    slug: "vaccine-costs-pediatric-dpc",
-    category: "Practice Finance",
-    title:
-      "Why Vaccine Costs Are the #1 Financial Blind Spot in Pediatric DPC Practices (And What to Do About It)",
-    excerpt:
-      "Vaccines are the most overlooked cost driver in pediatric DPC practices. Learn procurement strategy, VFC compliance, and membership pricing approaches.",
-    readTime: "6 min read",
-  },
-];
+import blogData from "../../public/blog-data.json";
 
 export function BlogIndexPage() {
   useSEO({
@@ -30,6 +9,11 @@ export function BlogIndexPage() {
     description: "Expert insights on DPC practice finance, pediatric direct primary care, and physician entrepreneurship from Dr. Ekene Ajufo.",
     path: "/blog",
   });
+
+  const blogs = blogData.blogs.sort(
+    (a, b) =>
+      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+  );
 
   return (
     <div className="bg-cream min-h-screen">
@@ -53,15 +37,26 @@ export function BlogIndexPage() {
       <section className="pb-16">
         <div className="container">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {BLOG_POSTS.map((post) => (
+            {blogs.map((post) => (
               <Link
                 key={post.slug}
                 to={`/blog/${post.slug}`}
                 className="group bg-white rounded-xl border border-border/60 flex flex-col hover:shadow-md transition-shadow overflow-hidden"
               >
+                {/* Cover Image */}
+                {post.coverImageUrl && (
+                  <div className="h-40 overflow-hidden bg-gray-200">
+                    <img
+                      src={post.coverImageUrl}
+                      alt={post.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                )}
+
                 <div className="p-6 flex flex-col flex-1">
                   <span className="text-xs font-semibold tracking-[0.15em] uppercase text-gold">
-                    {post.category}
+                    {post.tags?.[0] || "Article"}
                   </span>
                   <h3
                     className="text-lg font-semibold text-navy mt-2 leading-snug"
@@ -75,7 +70,10 @@ export function BlogIndexPage() {
                   <div className="mt-4 flex items-center justify-between">
                     <span className="text-xs text-navy/40 flex items-center gap-1">
                       <Clock className="size-3" />
-                      {post.readTime}
+                      {new Date(post.publishedAt).toLocaleDateString("en-US", {
+                        month: "short",
+                        day: "numeric",
+                      })}
                     </span>
                     <span className="text-sm font-medium text-navy/70 group-hover:text-navy flex items-center gap-1 transition-colors">
                       Read Post
