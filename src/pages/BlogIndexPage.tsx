@@ -1,7 +1,7 @@
 import { ArrowRight, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useSEO } from "../hooks/useSEO";
-import blogData from "../../public/blog-data.json";
+import blogData from "../data/blog-data.json";
 
 export function BlogIndexPage() {
   useSEO({
