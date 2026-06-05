@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { JsonLd } from "../components/JsonLd";
 import { useSEO } from "../hooks/useSEO";
-import blogData from "../../public/blog-data.json";
+import blogData from "../data/blog-data.json";
 
 /* ─── Types ─── */
 interface BlogPost {
