@@ -153,7 +153,7 @@ const OnboardPage = () => {
     setIsSubmitting(true);
 
     try {
-      // Prepare form data for Zapier submission
+      // Prepare form data for submission
       const submitData = {
         ...formData,
         submittedAt: new Date().toISOString(),
@@ -161,9 +161,8 @@ const OnboardPage = () => {
         fileNames: uploadedFiles.map(f => f.name)
       };
 
-      // Send to Zapier webhook for GHL integration
-      const zapierUrl = 'https://hooks.zapier.com/hooks/catch/27828973/4bp2lvy/';
-      const response = await fetch(zapierUrl, {
+      // Send to backend API (which forwards to Zapier)
+      const response = await fetch('/api/submit-onboarding', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -171,11 +170,11 @@ const OnboardPage = () => {
         body: JSON.stringify(submitData),
       });
 
-      if (response.ok || response.status === 200) {
+      if (response.ok) {
         setSubmitted(true);
       } else {
-        console.error('Zapier response:', response.status);
-        setErrors({ submit: 'Failed to submit form. Please try again.' });
+        const errorData = await response.json();
+        setErrors({ submit: errorData.message || 'Failed to submit form. Please try again.' });
       }
     } catch (error) {
       console.error('Error submitting form:', error);
