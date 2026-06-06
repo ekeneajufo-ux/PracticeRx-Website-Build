@@ -156,23 +156,7 @@ const OnboardPage = () => {
     setIsSubmitting(true);
 
     try {
-      const submitData = {
-        ...formData,
-        submittedAt: new Date().toISOString(),
-        filesCount: uploadedFiles.length,
-        fileNames: uploadedFiles.map(f => f.name)
-      };
-
-      // Send to internal API
-      const response = await fetch('/api/submit-onboarding', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(submitData),
-      });
-
-      // Also send to Zapier webhook
+      // Prepare Zapier payload with key fields
       const zapierPayload = {
         'First Name': formData.firstName,
         'Last Name': formData.lastName,
@@ -182,23 +166,40 @@ const OnboardPage = () => {
         'Specialty': formData.specialty.join(', '),
       };
 
-      await fetch(ZAPIER_WEBHOOK_URL, {
+      // Send to Zapier webhook (primary submission)
+      const zapierResponse = await fetch(ZAPIER_WEBHOOK_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(zapierPayload),
-      }).catch(err => console.error('Zapier webhook error:', err));
+      });
 
-      if (response.ok) {
-        setSubmitted(true);
-      } else {
-        const errorData = await response.json();
-        setErrors({ submit: errorData.message || 'Failed to submit form. Please try again.' });
+      if (!zapierResponse.ok) {
+        throw new Error('Failed to submit to Zapier');
       }
+
+      // Also try to send to internal API (non-critical)
+      const submitData = {
+        ...formData,
+        submittedAt: new Date().toISOString(),
+        filesCount: uploadedFiles.length,
+        fileNames: uploadedFiles.map(f => f.name)
+      };
+
+      fetch('/api/submit-onboarding', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(submitData),
+      }).catch(err => console.error('Internal API error (non-critical):', err));
+
+      // Show thank you page if Zapier succeeded
+      setSubmitted(true);
     } catch (error) {
       console.error('Error submitting form:', error);
-      setErrors({ submit: 'An error occurred. Please try again.' });
+      setErrors({ submit: 'Failed to submit form. Please try again.' });
     } finally {
       setIsSubmitting(false);
     }
