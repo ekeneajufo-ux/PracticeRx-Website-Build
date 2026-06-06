@@ -1,1 +1,141 @@
-aW1wb3J0IHsgQ2hlY2ssIEJvb2tPcGVuIH0gZnJvbSAibHVjaWRlLXJlYWN0IjsKCmNvbnN0IEZNX0RQQ19DSEVDS09VVCA9ICJodHRwczovL2Z1bm5lbHMucHJhY3RpY2VyeGNvbnN1bHRpbmcuY29tL2ZhbWlseW1lZGljaW5lY29tcGxldGVndWlkZSI7CmNvbnN0IFZBQ0NJTkVfQ0hFQ0tPVVQgPSAiaHR0cHM6Ly9mdW5uZWxzLnByYWN0aWNlcnhjb25zdWx0aW5nLmNvbS92YWNjaW5lZ3VpZGUtcGFnZSI7CmNvbnN0IFBTWUNIX0NIRUNLT1VUID0gImh0dHBzOi8vZnVubmVscy5wcmFjdGljZXJ4Y29uc3VsdGluZy5jb20vcHN5Y2hibHVlcHJpbnQtcGFnZSI7CgovKiDilIDilIDilIAgQ292ZXIgTW9ja3VwIChTVkcgaWxsdXN0cmF0aW9uKSDilIDilIDilIAgKi8KZnVuY3Rpb24gR3VpZGVDb3Zlcih7IHRpdGxlLCBjb2xvciB9OiB7IHRpdGxlOiBzdHJpbmc7IGNvbG9yOiBzdHJpbmcgfSkgewogIHJldHVybiAoCiAgICA8ZGl2IGNsYXNzTmFtZT0idy1mdWxsIG1heC13LVsyODBweF0gbXgtYXV0byI+CiAgICAgIDxkaXYKICAgICAgICBjbGFzc05hbWU9InJlbGF0aXZlIHJvdW5kZWQtbGcgc2hhZG93LWxnIG92ZXJmbG93LWhpZGRlbiIKICAgICAgICBzdHlsZT17eyBhc3BlY3RSYXRpbzogIjMvNCIgfX0KICAgICAgPgogICAgICAgIHsvKiBCYWNrZ3JvdW5kICovfQogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJhYnNvbHV0ZSBpbnNldC0wIGJnLW5hdnkiIC8+CiAgICAgICAgey8qIFRvcCBhY2NlbnQgYmFyICovfQogICAgICAgIDxkaXYKICAgICAgICAgIGNsYXNzTmFtZT0iYWJzb2x1dGUgdG9wLTAgbGVmdC0wIHJpZ2h0LTAgaC0yIgogICAgICAgICAgc3R5bGU9e3sgYmFja2dyb3VuZENvbG9yOiBjb2xvciB9fQogICAgICAgIC8+CiAgICAgICAgey8qIENvbnRlbnQgKi99CiAgICAgICAgPGRpdiBjbGFzc05hbWU9InJlbGF0aXZlIGgtZnVsbCBmbGV4IGZsZXgtY29sIGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWJldHdlZW4gcC02IHRleHQtY2VudGVyIj4KICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4LTEgZmxleCBmbGV4LWNvbCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgZ2FwLTQiPgogICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0idy0xMiBoLTEyIHJvdW5kZWQtZnVsbCBiZy13aGl0ZS8xMCBmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciI+CiAgICAgICAgICAgICAgPEJvb2tPcGVuIGNsYXNzTmFtZT0ic2l6ZS02IHRleHQtZ29sZCIgLz4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIDxoNAogICAgICAgICAgICAgIGNsYXNzTmFtZT0idGV4dC13aGl0ZSB0ZXh0LWJhc2UgZm9udC1zZW1pYm9sZCBsZWFkaW5nLXNudWcgbWF4LXctWzIwMHB4XSIKICAgICAgICAgICAgICBzdHlsZT17eyBmb250RmFtaWx5OiAidmFyKC0tZm9udC1oZWFkaW5nKSIgfX0KICAgICAgICAgICAgPgogICAgICAgICAgICAgIHt0aXRsZX0KICAgICAgICAgICAgPC9oND4KICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9InctMTAgaC0wLjUgYmctZ29sZC82MCByb3VuZGVkLWZ1bGwiIC8+CiAgICAgICAgICA8L2Rpdj4KICAgICAgICAgIHsvKiBMb2dvIGFyZWEgKi99CiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ibXQtYXV0byBwdC00Ij4KICAgICAgICAgICAgPGltZwogICAgICAgICAgICAgIHNyYz0iL2Zhdmljb24ucG5nIgogICAgICAgICAgICAgIGFsdD0iUHJhY3RpY2VSeCIKICAgICAgICAgICAgICBjbGFzc05hbWU9ImgtNiBvcGFjaXR5LTYwIG14LWF1dG8iCiAgICAgICAgICAgICAgb25FcnJvcj17KGUpID0+IHsKICAgICAgICAgICAgICAgIChlLnRhcmdldCBhcyBIVE1MSW1hZ2VFbGVtZW50KS5zdHlsZS5kaXNwbGF5ID0gIm5vbmUiOwogICAgICAgICAgICAgIH19CiAgICAgICAgICAgIC8+CiAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0idGV4dC13aGl0ZS80MCB0ZXh0LVsxMHB4XSBtdC0xIHRyYWNraW5nLXdpZGVyIHVwcGVyY2FzZSI+CiAgICAgICAgICAgICAgUHJhY3RpY2VSeCBDb25zdWx0aW5nCiAgICAgICAgICAgIDwvcD4KICAgICAgICAgIDwvZGl2PgogICAgICAgIDwvZGl2PgogICAgICA8L2Rpdj4KICAgIDwvZGl2PgogICk7Cn0KCmludGVyZmFjZSBHdWlkZUNhcmQgewogIHRhZzogc3RyaW5nOwogIGJhZGdlOiBzdHJpbmc7CiAgYmFkZ2VDb2xvcjogc3RyaW5nOwogIG5hbWU6IHN0cmluZzsKICB0YWdsaW5lOiBzdHJpbmc7CiAgZGVzY3JpcHRpb246IHN0cmluZzsKICBjb3ZlclRpdGxlOiBzdHJpbmc7CiAgY292ZXJBY2NlbnQ6IHN0cmluZzsKICBidWxsZXRzOiBzdHJpbmdbXTsKICBwcmljZTogbnVtYmVyOwogIGNoZWNrb3V0VXJsOiBzdHJpbmc7Cn0KCmNvbnN0IEdVSURFUzogR3VpZGVDYXJkW10gPSBbCiAgewogICAgdGFnOiAiRGlnaXRhbCBHdWlkZSIsCiAgICBiYWRnZTogIkJlc3QgZm9yIFBlZGlhdHJpY3MiLAogICAgYmFkZ2VDb2xvcjogImJnLXRlYWwtNTAgdGV4dC10ZWFsLTcwMCIsCiAgICBuYW1lOiAiRFBDIFBlZGlhdHJpYyBWYWNjaW5lIENvc3QgTWFuYWdlbWVudCBHdWlkZSIsCiAgICB0YWdsaW5lOiAiVGhlIGZpbmFuY2lhbCBibGluZCBzcG90IG1vc3QgcGVkaWF0cmljIERQQyBwcmFjdGljZXMgbWlzcyIsCiAgICBkZXNjcmlwdGlvbjoKICAgICAgIlRoZSBvbmx5IGZpbmFuY2lhbCBndWlkZSB3cml0dGVuIHNwZWNpZmljYWxseSBmb3IgRFBDIHBlZGlhdHJpY2lhbnMg4oCUIGNvdmVyaW5nIHByb2N1cmVtZW50LCBWRkMgY29tcGxpYW5jZSwgYW5kIG1lbWJlcnNoaXAgcHJpY2luZyBhcm91bmQgdmFjY2luZSBjb3N0cy4iLAogICAgY292ZXJUaXRsZTogIlBlZGlhdHJpYyBEUENcblZhY2NpbmUgQ29zdFxuTWFuYWdlbWVudCBHdWlkZSIsCiAgICBjb3ZlckFjY2VudDogIiMyREQ0QkYiLAogICAgYnVsbGV0czogWwogICAgICAiQWdlLWJhbmQgdmFjY2luZSBjb3N0IG1vZGVsICgw4oCTMiwgM+KAkzYsIDfigJMxMSwgMTLigJMxOCB5ZWFycykiLAogICAgICAiR1BPIGNvbXBhcmlzb24gdGFibGUg4oCUIDE14oCTMzUlIHNhdmluZ3Mgb24gYWNxdWlzaXRpb24gY29zdHMiLAogICAgICAiVkZDIGVsaWdpYmlsaXR5IGJyZWFrZG93biBieSBwcmFjdGljZSBzdHJ1Y3R1cmUiLAogICAgICAiQWxsIDQgbWVtYmVyc2hpcCBkZXNpZ24gYXBwcm9hY2hlcyB3aXRoIGNvbXBsaWFuY2UgaW1wbGljYXRpb25zIiwKICAgICAgIk9wZXJhdGlvbmFsIGNoZWNrbGlzdHMgZm9yIGludmVudG9yeSAmIGNvbGQgY2hhaW4gY29tcGxpYW5jZSIsCiAgICAgICJQYXRpZW50IGNvbW11bmljYXRpb24gc2NyaXB0IGZvciB0aGUgdmFjY2luZSBjb3N0IGNvbnZlcnNhdGlvbiIsCiAgICAgICJGdWxsIHByYWN0aWNlIGF1ZGl0IGNoZWNrbGlzdCIsCiAgICBdLAogICAgcHJpY2U6IDM5OSwKICAgIGNoZWNrb3V0VXJsOiBWQUNDSU5FX0NIRUNLT1VULAogIH0sCiAgewogICAgdGFnOiAiRGlnaXRhbCBHdWlkZSIsCiAgICBiYWRnZTogIkJlc3QgZm9yIEZhbWlseSBNZWRpY2luZSIsCiAgICBiYWRnZUNvbG9yOiAiYmctdGVhbC01MCB0ZXh0LXRlYWwtNzAwIiwKICAgIG5hbWU6ICJUaGUgRmFtaWx5IE1lZGljaW5lIFBoeXNpY2lhbidzIENvbXBsZXRlIEd1aWRlIHRvIExhdW5jaGluZyBhIERQQyBQcmFjdGljZSIsCiAgICB0YWdsaW5lOiAiRnJvbSBidXJub3V0IHRvIGluZGVwZW5kZW50IHByYWN0aWNlIGluIDkwIGRheXMiLAogICAgZGVzY3JpcHRpb246CiAgICAgICJUaGUgY29tcGxldGUgZmluYW5jaWFsLCBsZWdhbCwgYW5kIG9wZXJhdGlvbmFsIHJvYWRtYXAgZm9yIGZhbWlseSBtZWRpY2luZSBwaHlzaWNpYW5zIG1ha2luZyB0aGUgdHJhbnNpdGlvbiB0byBEUEMg4oCUIHdyaXR0ZW4gYnkgYSBwaHlzaWNpYW4gd2hvIGhhcyBkb25lIGl0LiIsCiAgICBjb3ZlclRpdGxlOiAiRmFtaWx5IE1lZGljaW5lXG5EUEMgTGF1bmNoXG5HdWlkZSIsCiAgICBjb3ZlckFjY2VudDogIiNDNkEzNUMiLAogICAgYnVsbGV0czogWwogICAgICAiQnJlYWstZXZlbiBmaW5hbmNpYWwgbW9kZWwg4oCUIGN1c3RvbWl6YWJsZSBmb3IgeW91ciBzcGVjaWZpYyBudW1iZXJzIiwKICAgICAgIkRQQyB2cy4gY29uY2llcmdlIGNvbXBhcmlzb24g4oCUIGtub3cgd2hpY2ggbW9kZWwgZml0cyB5b3VyIGdvYWxzIiwKICAgICAgIkVNUiBjb21wYXJpc29uIHRhYmxlIOKAlCA1IHBsYXRmb3JtcyByYXRlZCBmb3IgRFBDIGZhbWlseSBtZWRpY2luZSIsCiAgICAgICJFbnRpdHkgc3RydWN0dXJlIGd1aWRlIOKAlCBMTEMgdnMuIFMtQ29ycCB3aXRoIHRheCBpbXBsaWNhdGlvbnMiLAogICAgICAiRW1wbG95ZXIgcGFydG5lcnNoaXAgcGxheWJvb2sg4oCUIHRoZSBmYXN0ZXN0IHBhdGllbnQgYWNxdWlzaXRpb24gY2hhbm5lbCIsCiAgICAgICI5MC1kYXkgcGhhc2VkIGxhdW5jaCByb2FkbWFwIHdpdGggd2Vla2x5IG1pbGVzdG9uZXMiLAogICAgICAiQ29tcGxldGUgbGF1bmNoIGNoZWNrbGlzdCDigJQgNTArIGl0ZW1zIGFjcm9zcyBsZWdhbCwgZmluYW5jaWFsLCBhbmQgbWFya2V0aW5nIiwKICAgIF0sCiAgICBwcmljZTogMzk5LAogICAgY2hlY2tvdXRVcmw6IEZNX0RQQ19DSEVDS09VVCwKICB9LAogIHsKICAgIHRhZzogIkRpZ2l0YWwgQmx1ZXByaW50IiwKICAgIGJhZGdlOiAiQmVzdCBmb3IgUHN5Y2hpYXRyeSIsCiAgICBiYWRnZUNvbG9yOiAiYmctcHVycGxlLTUwIHRleHQtcHVycGxlLTcwMCIsCiAgICBuYW1lOiAiUHN5Y2hpYXRyeSBDYXNoIFByYWN0aWNlIEJsdWVwcmludCIsCiAgICB0YWdsaW5lOiAiVGhlIGNvbXBsZXRlIHBsYXlib29rIGZvciBjYXNoLWJhc2VkICYgRFBDIHBzeWNoaWF0cnkiLAogICAgZGVzY3JpcHRpb246CiAgICAgICJFaWdodCBtb2R1bGVzIGNvdmVyaW5nIHJldmVudWUgbW9kZWxpbmcsIHN0YXRlIERQQyBsYXcgcmVmZXJlbmNlLCBwYXRpZW50IHNlcnZpY2VzIGFncmVlbWVudCB0ZW1wbGF0ZXMsIGludGVydmVudGlvbmFsIHBzeWNoaWF0cnkgYWRkLW9ucyAoa2V0YW1pbmUsIFRNUywgU3ByYXZhdG8pLCBmZWUgc2NoZWR1bGUgYmVuY2htYXJrcywgYW5kIHBhdGllbnQgYWNxdWlzaXRpb24gcGxheWJvb2tzIOKAlCBidWlsdCBzcGVjaWZpY2FsbHkgZm9yIHBzeWNoaWF0cmlzdHMuIiwKICAgIGNvdmVyVGl0bGU6ICJQc3ljaGlhdHJ5XG5DYXNoIFByYWN0aWNlXG5CbHVlcHJpbnQiLAogICAgY292ZXJBY2NlbnQ6ICIjNTM0QUI3IiwKICAgIGJ1bGxldHM6IFsKICAgICAgIlJldmVudWUgbW9kZWxpbmcgc3ByZWFkc2hlZXQg4oCUIGZlZS1mb3Itc2VydmljZSwgbWVtYmVyc2hpcCwgJiBoeWJyaWQiLAogICAgICAiU3RhdGUtYnktc3RhdGUgRFBDIGxhdyByZWZlcmVuY2UgZm9yIGFsbCA1MCBzdGF0ZXMiLAogICAgICAiUGF0aWVudCBzZXJ2aWNlcyBhZ3JlZW1lbnQgdGVtcGxhdGUg4oCUIHBzeWNoaWF0cnktc3BlY2lmaWMiLAogICAgICAiOTAtZGF5IHByYWN0aWNlIGxhdW5jaCByb2FkbWFwIHdpdGggd2Vla2x5IG1pbGVzdG9uZXMiLAogICAgICAiRmVlIHNjaGVkdWxlIGJlbmNobWFya3MgZm9yIGV2ZXJ5IG1ham9yIHBzeWNoaWF0cmljIHNlcnZpY2UiLAogICAgICAiSW50ZXJ2ZW50aW9uYWwgcHN5Y2hpYXRyeSBhZGQtb24gZ3VpZGUg4oCUIGtldGFtaW5lLCBUTVMsIFNwcmF2YXRvIiwKICAgICAgIlBhdGllbnQgYWNxdWlzaXRpb24gbWFya2V0aW5nIHBsYXlib29rICYgS1BJIGRhc2hib2FyZCIsCiAgICBdLAogICAgcHJpY2U6IDQ5OSwKICAgIGNoZWNrb3V0VXJsOiBQU1lDSF9DSEVDS09VVCwKICB9LApdOwoKZnVuY3Rpb24gRmVhdHVyZWRHdWlkZUNhcmQoeyBndWlkZSB9OiB7IGd1aWRlOiBHdWlkZUNhcmQgfSkgewogIHJldHVybiAoCiAgICA8ZGl2IGNsYXNzTmFtZT0iYmctd2hpdGUgcm91bmRlZC0yeGwgYm9yZGVyIGJvcmRlci1ib3JkZXIvNjAgb3ZlcmZsb3ctaGlkZGVuIGhvdmVyOnNoYWRvdy1sZyB0cmFuc2l0aW9uLXNoYWRvdyI+CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJncmlkIG1kOmdyaWQtY29scy1bMjgwcHhfMWZyXSBnYXAtMCI+CiAgICAgICAgey8qIExlZnQ6IENvdmVyIG1vY2t1cCAqL30KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iYmctY3JlYW0vNjAgcC04IGZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIj4KICAgICAgICAgIDxHdWlkZUNvdmVyIHRpdGxlPXtndWlkZS5jb3ZlclRpdGxlfSBjb2xvcj17Z3VpZGUuY292ZXJBY2NlbnR9IC8+CiAgICAgICAgPC9kaXY+CgogICAgICAgIHsvKiBSaWdodDogRGV0YWlscyAqL30KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0icC02IG1kOnAtOCBmbGV4IGZsZXgtY29sIj4KICAgICAgICAgIHsvKiBUYWcgKyBCYWRnZSAqL30KICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4IGl0ZW1zLWNlbnRlciBnYXAtMiBtYi0zIj4KICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSJ0ZXh0LVsxMXB4XSBmb250LXNlbWlib2xkIHB4LTIuNSBweS0xIHJvdW5kZWQtZnVsbCBiZy1uYXZ5LzUgdGV4dC1uYXZ5LzYwIj4KICAgICAgICAgICAgICB7Z3VpZGUudGFnfQogICAgICAgICAgICA8L3NwYW4+CiAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT17YHRleHQtWzExcHhdIGZvbnQtc2VtaWJvbGQgcHgtMi41IHB5LTEgcm91bmRlZC1mdWxsICR7Z3VpZGUuYmFkZ2VDb2xvcn1gfT4KICAgICAgICAgICAgICB7Z3VpZGUuYmFkZ2V9CiAgICAgICAgICAgIDwvc3Bhbj4KICAgICAgICAgIDwvZGl2PgoKICAgICAgICAgIHsvKiBOYW1lICovfQogICAgICAgICAgPGgzCiAgICAgICAgICAgIGNsYXNzTmFtZT0idGV4dC14bCBtZDp0ZXh0LTJ4bCBmb250LXNlbWlib2xkIHRleHQtbmF2eSBsZWFkaW5nLXNudWciCiAgICAgICAgICAgIHN0eWxlPXt7IGZvbnRGYW1pbHk6ICJ2YXIoLS1mb250LWhlYWRpbmcpIiB9fQogICAgICAgICAgPgogICAgICAgICAgICB7Z3VpZGUubmFtZX0KICAgICAgICAgIDwvaDM+CiAgICAgICAgICA8cCBjbGFzc05hbWU9InRleHQtc20gdGV4dC1uYXZ5LzUwIGl0YWxpYyBtdC0xIj57Z3VpZGUudGFnbGluZX08L3A+CiAgICAgICAgICA8cCBjbGFzc05hbWU9InRleHQtc20gdGV4dC1uYXZ5LzYwIG10LTMgbGVhZGluZy1yZWxheGVkIj4KICAgICAgICAgICAge2d1aWRlLmRlc2NyaXB0aW9ufQogICAgICAgICAgPC9wPgoKICAgICAgICAgIHsvKiBCdWxsZXRzICovfQogICAgICAgICAgPHVsIGNsYXNzTmFtZT0ibXQtNCBzcGFjZS15LTIgZmxleC0xIj4KICAgICAgICAgICAge2d1aWRlLmJ1bGxldHMubWFwKChiLCBpKSA9PiAoCiAgICAgICAgICAgICAgPGxpIGtleT17aX0gY2xhc3NOYW1lPSJmbGV4IGl0ZW1zLXN0YXJ0IGdhcC0yIj4KICAgICAgICAgICAgICAgIDxDaGVjayBjbGFzc05hbWU9InNpemUtMy41IHRleHQtZ29sZCBtdC0wLjUgc2hyaW5rLTAiIC8+CiAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9InRleHQtc20gdGV4dC1uYXZ5LzY1Ij57Yn08L3NwYW4+CiAgICAgICAgICAgICAgPC9saT4KICAgICAgICAgICAgKSl9CiAgICAgICAgICA8L3VsPgoKICAgICAgICAgIHsvKiBQcmljZSArIENUQSAqL30KICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJtdC02IHB0LTUgYm9yZGVyLXQgYm9yZGVyLWJvcmRlci80MCBmbGV4IGZsZXgtd3JhcCBpdGVtcy1lbmQganVzdGlmeS1iZXR3ZWVuIGdhcC00Ij4KICAgICAgICAgICAgPGRpdj4KICAgICAgICAgICAgICA8cAogICAgICAgICAgICAgICAgY2xhc3NOYW1lPSJ0ZXh0LTN4bCBmb250LWJvbGQiCiAgICAgICAgICAgICAgICBzdHlsZT17ewogICAgICAgICAgICAgICAgICBmb250RmFtaWx5OiAidmFyKC0tZm9udC1oZWFkaW5nKSIsCiAgICAgICAgICAgICAgICAgIGNvbG9yOiAidmFyKC0tY29sb3ItZ29sZCkiLAogICAgICAgICAgICAgICAgfX0KICAgICAgICAgICAgICA+CiAgICAgICAgICAgICAgICAke2d1aWRlLnByaWNlfQogICAgICAgICAgICAgIDwvcD4KICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9InRleHQteHMgdGV4dC1uYXZ5LzQwIj5vbmUtdGltZSDCtyBpbnN0YW50IFBERiBkb3dubG9hZDwvcD4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIDxhCiAgICAgICAgICAgICAgaHJlZj17Z3VpZGUuY2hlY2tvdXRVcmx9CiAgICAgICAgICAgICAgdGFyZ2V0PSJfYmxhbmsiCiAgICAgICAgICAgICAgcmVsPSJub29wZW5lciBub3JlZmVycmVyIgogICAgICAgICAgICAgIGNsYXNzTmFtZT0iaW5saW5lLWZsZXggaXRlbXMtY2VudGVyIGdhcC0yIHB4LTYgcHktMyB0ZXh0LXNtIGZvbnQtYm9sZCB0ZXh0LXdoaXRlIHJvdW5kZWQtbGcgdHJhbnNpdGlvbi1hbGwgaG92ZXI6YnJpZ2h0bmVzcy0xMTAiCiAgICAgICAgICAgICAgc3R5bGU9e3sgYmFja2dyb3VuZENvbG9yOiAiIzJERDRCRiIgfX0KICAgICAgICAgICAgPgogICAgICAgICAgICAgIEdldCB0aGUgR3VpZGUg4oaSCiAgICAgICAgICAgIDwvYT4KICAgICAgICAgIDwvZGl2PgogICAgICAgICAgPHAgY2xhc3NOYW1lPSJ0ZXh0LXhzIHRleHQtbmF2eS8zNSBpdGFsaWMgbXQtMyI+CiAgICAgICAgICAgIFdyaXR0ZW4gYnkgRHIuIEVrZW5lIEFqdWZvLCBNRCDCtyBQcmFjdGljaW5nIHBoeXNpY2lhbiDCtyBJbnN0YW50IGRvd25sb2FkCiAgICAgICAgICA8L3A+CiAgICAgICAgPC9kaXY+CiAgICAgIDwvZGl2PgogICAgPC9kaXY+CiAgKTsKfQoKZXhwb3J0IGZ1bmN0aW9uIEd1aWRlc1Jlc291cmNlcygpIHsKICByZXR1cm4gKAogICAgPHNlY3Rpb24gaWQ9Imd1aWRlcyIgY2xhc3NOYW1lPSJweS0xMCBtZDpweS0xNCBiZy1jcmVhbSI+CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJjb250YWluZXIiPgogICAgICAgIHsvKiBIZWFkZXIgKi99CiAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSJ0ZXh0LXhzIGZvbnQtc2VtaWJvbGQgdHJhY2tpbmctWzAuMmVtXSB1cHBlcmNhc2UgdGV4dC1uYXZ5LzQwIj4KICAgICAgICAgIEd1aWRlcyAmYW1wOyBSZXNvdXJjZXMKICAgICAgICA8L3NwYW4+CiAgICAgICAgPGgyCiAgICAgICAgICBjbGFzc05hbWU9InRleHQtM3hsIG1kOnRleHQtNHhsIGxnOnRleHQtNXhsIGZvbnQtc2VtaWJvbGQgdGV4dC1uYXZ5IG10LTMgbGVhZGluZy10aWdodCIKICAgICAgICAgIHN0eWxlPXt7IGZvbnRGYW1pbHk6ICJ2YXIoLS1mb250LWhlYWRpbmcpIiB9fQogICAgICAgID4KICAgICAgICAgIERlZXAtZGl2ZSBndWlkZXMgZm9yeyIgIn0KICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0iaXRhbGljIHRleHQtZ29sZCI+c2VyaW91cyBwaHlzaWNpYW5zLjwvc3Bhbj4KICAgICAgICA8L2gyPgogICAgICAgIDxwIGNsYXNzTmFtZT0ibXQtNCB0ZXh0LW5hdnkvNjAgbWF4LXcteGwgbGVhZGluZy1yZWxheGVkIj4KICAgICAgICAgIENvbXByZWhlbnNpdmUsIHBoeXNpY2lhbi13cml0dGVuIHJlc291cmNlcyBjb3ZlcmluZyB0aGUgZmluYW5jaWFsLAogICAgICAgICAgbGVnYWwsIGFuZCBvcGVyYXRpb25hbCBkZXRhaWxzIHRoYXQgbWF0dGVyIG1vc3QuCiAgICAgICAgPC9wPgoKICAgICAgICB7LyogR3VpZGUgQ2FyZHMgKi99CiAgICAgICAgPGRpdiBjbGFzc05hbWU9InNwYWNlLXktNiBtdC04Ij4KICAgICAgICAgIHtHVUlERVMubWFwKChndWlkZSwgaSkgPT4gKAogICAgICAgICAgICA8RmVhdHVyZWRHdWlkZUNhcmQga2V5PXtpfSBndWlkZT17Z3VpZGV9IC8+CiAgICAgICAgICApKX0KICAgICAgICA8L2Rpdj4KICAgICAgPC9kaXY+CiAgICA8L3NlY3Rpb24+CiAgKTsKfQo=
+import { Check, BookOpen } from "lucide-react";
+
+const FM_DPC_CHECKOUT = "https://funnels.practicerxconsulting.com/familymedicinecompleteguide";
+const VACCINE_CHECKOUT = "https://funnels.practicerxconsulting.com/vaccineguide-page";
+const PSYCH_CHECKOUT = "https://funnels.practicerxconsulting.com/psychblueprint-page";
+
+function GuideCover({ title, color }: { title: string; color: string }) {
+  return (
+    <div className="w-full max-w-[280px] mx-auto">
+      <div className="relative rounded-lg shadow-lg overflow-hidden" style={{ aspectRatio: "3/4" }}>
+        <div className="absolute inset-0 bg-navy" />
+        <div className="absolute top-0 left-0 right-0 h-2" style={{ backgroundColor: color }} />
+        <div className="relative h-full flex flex-col items-center justify-between p-6 text-center">
+          <div className="flex-1 flex flex-col items-center justify-center gap-4">
+            <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
+              <BookOpen className="size-6 text-gold" />
+            </div>
+            <h4 className="text-white text-base font-semibold leading-snug max-w-[200px]" style={{ fontFamily: "var(--font-heading)" }}>
+              {title}
+            </h4>
+            <div className="w-10 h-0.5 bg-gold/60 rounded-full" />
+          </div>
+          <div className="mt-auto pt-4">
+            <img src="/favicon.png" alt="PracticeRx" className="h-6 opacity-60 mx-auto" onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />
+            <p className="text-white/40 text-[10px] mt-1 tracking-wider uppercase">PracticeRx Consulting</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+interface GuideCard {
+  tag: string;
+  badge: string;
+  badgeColor: string;
+  name: string;
+  tagline: string;
+  description: string;
+  coverTitle: string;
+  coverAccent: string;
+  bullets: string[];
+  price: number;
+  checkoutUrl: string;
+}
+
+const GUIDES: GuideCard[] = [
+  {
+    tag: "Digital Guide",
+    badge: "Best for Pediatrics",
+    badgeColor: "bg-teal-50 text-teal-700",
+    name: "DPC Pediatric Vaccine Cost Management Guide",
+    tagline: "The financial blind spot most pediatric DPC practices miss",
+    description: "The only financial guide written specifically for DPC pediatricians — covering procurement, VFC compliance, and membership pricing around vaccine costs.",
+    coverTitle: "Pediatric DPC\nVaccine Cost\nManagement Guide",
+    coverAccent: "#2DD4BF",
+    bullets: ["Age-band vaccine cost model (0–2, 3–6, 7–11, 12–18 years)", "GPO comparison table — 15–35% savings on acquisition costs", "VFC eligibility breakdown by practice structure", "All 4 membership design approaches with compliance implications", "Operational checklists for inventory & cold chain compliance", "Patient communication script for the vaccine cost conversation", "Full practice audit checklist"],
+    price: 399,
+    checkoutUrl: VACCINE_CHECKOUT,
+  },
+  {
+    tag: "Digital Guide",
+    badge: "Best for Family Medicine",
+    badgeColor: "bg-teal-50 text-teal-700",
+    name: "The Family Medicine Physician's Complete Guide to Launching a DPC Practice",
+    tagline: "From burnout to independent practice in 90 days",
+    description: "The complete financial, legal, and operational roadmap for family medicine physicians making the transition to DPC — written by a physician who has done it.",
+    coverTitle: "Family Medicine\nDPC Launch\nGuide",
+    coverAccent: "#C6A35C",
+    bullets: ["Break-even financial model — customizable for your specific numbers", "DPC vs. concierge comparison — know which model fits your goals", "EMR comparison table — 5 platforms rated for DPC family medicine", "Entity structure guide — LLC vs. S-Corp with tax implications", "Employer partnership playbook — the fastest patient acquisition channel", "90-day phased launch roadmap with weekly milestones", "Complete launch checklist — 50+ items across legal, financial, and marketing"],
+    price: 399,
+    checkoutUrl: FM_DPC_CHECKOUT,
+  },
+  {
+    tag: "Digital Blueprint",
+    badge: "Best for Psychiatry",
+    badgeColor: "bg-purple-50 text-purple-700",
+    name: "Psychiatry Cash Practice Blueprint",
+    tagline: "The complete playbook for cash-based & DPC psychiatry",
+    description: "Eight modules covering revenue modeling, state DPC law reference, patient services agreement templates, interventional psychiatry add-ons (ketamine, TMS, Spravato), fee schedule benchmarks, and patient acquisition playbooks — built specifically for psychiatrists.",
+    coverTitle: "Psychiatry\nCash Practice\nBlueprint",
+    coverAccent: "#534AB7",
+    bullets: ["Revenue modeling spreadsheet — fee-for-service, membership, & hybrid", "State-by-state DPC law reference for all 50 states", "Patient services agreement template — psychiatry-specific", "90-day practice launch roadmap with weekly milestones", "Fee schedule benchmarks for every major psychiatric service", "Interventional psychiatry add-on guide — ketamine, TMS, Spravato", "Patient acquisition marketing playbook & KPI dashboard"],
+    price: 499,
+    checkoutUrl: PSYCH_CHECKOUT,
+  },
+];
+
+function FeaturedGuideCard({ guide }: { guide: GuideCard }) {
+  return (
+    <div className="bg-white rounded-2xl border border-border/60 overflow-hidden hover:shadow-lg transition-shadow">
+      <div className="grid md:grid-cols-[280px_1fr] gap-0">
+        <div className="bg-cream/60 p-8 flex items-center justify-center">
+          <GuideCover title={guide.coverTitle} color={guide.coverAccent} />
+        </div>
+        <div className="p-6 md:p-8 flex flex-col">
+          <div className="flex items-center gap-2 mb-3">
+            <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-navy/5 text-navy/60">{guide.tag}</span>
+            <span className={`text-[11px] font-semibold px-2.5 py-1 rounded-full ${guide.badgeColor}`}>{guide.badge}</span>
+          </div>
+          <h3 className="text-xl md:text-2xl font-semibold text-navy leading-snug" style={{ fontFamily: "var(--font-heading)" }}>{guide.name}</h3>
+          <p className="text-sm text-navy/50 italic mt-1">{guide.tagline}</p>
+          <p className="text-sm text-navy/60 mt-3 leading-relaxed">{guide.description}</p>
+          <ul className="mt-4 space-y-2 flex-1">
+            {guide.bullets.map((b, i) => (
+              <li key={i} className="flex items-start gap-2">
+                <Check className="size-3.5 text-gold mt-0.5 shrink-0" />
+                <span className="text-sm text-navy/65">{b}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-6 pt-5 border-t border-border/40 flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="text-3xl font-bold" style={{ fontFamily: "var(--font-heading)", color: "var(--color-gold)" }}>${guide.price}</p>
+              <p className="text-xs text-navy/40">one-time · instant PDF download</p>
+            </div>
+            <a href={guide.checkoutUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 text-sm font-bold text-white rounded-lg transition-all hover:brightness-110" style={{ backgroundColor: "#2DD4BF" }}>Get the Guide →</a>
+          </div>
+          <p className="text-xs text-navy/35 italic mt-3">Written by Dr. Ekene Ajufo, MD · Practicing physician · Instant download</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function GuidesResources() {
+  return (
+    <section id="guides" className="py-10 md:py-14 bg-cream">
+      <div className="container">
+        <span className="text-xs font-semibold tracking-[0.2em] uppercase text-navy/40">Guides &amp; Resources</span>
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-navy mt-3 leading-tight" style={{ fontFamily: "var(--font-heading)" }}>Deep-dive guides for <span className="italic text-gold">serious physicians.</span></h2>
+        <p className="mt-4 text-navy/60 max-w-xl leading-relaxed">Comprehensive, physician-written resources covering the financial, legal, and operational details that matter most.</p>
+        <div className="space-y-6 mt-8">
+          {GUIDES.map((guide, i) => (
+            <FeaturedGuideCard key={i} guide={guide} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
