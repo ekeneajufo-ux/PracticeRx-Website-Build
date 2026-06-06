@@ -1,6 +1,9 @@
 import React, { useState, useRef } from 'react';
 import { Upload, CheckCircle, Lock } from 'lucide-react';
 
+// Zapier webhook URL for form submissions
+const ZAPIER_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/27828973/4bp96gc/';
+
 const OnboardPage = () => {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -160,6 +163,7 @@ const OnboardPage = () => {
         fileNames: uploadedFiles.map(f => f.name)
       };
 
+      // Send to internal API
       const response = await fetch('/api/submit-onboarding', {
         method: 'POST',
         headers: {
@@ -167,6 +171,24 @@ const OnboardPage = () => {
         },
         body: JSON.stringify(submitData),
       });
+
+      // Also send to Zapier webhook
+      const zapierPayload = {
+        'First Name': formData.firstName,
+        'Last Name': formData.lastName,
+        'Contact Email': formData.contactEmail,
+        'Contact Phone': formData.contactPhone,
+        'Practice Name': formData.practiceName,
+        'Specialty': formData.specialty.join(', '),
+      };
+
+      await fetch(ZAPIER_WEBHOOK_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(zapierPayload),
+      }).catch(err => console.error('Zapier webhook error:', err));
 
       if (response.ok) {
         setSubmitted(true);
