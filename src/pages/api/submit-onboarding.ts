@@ -1,0 +1,39 @@
+import type { NextApiRequest, NextApiResponse } from 'next';
+
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  try {
+    const formData = req.body;
+
+    // Forward to Zapier webhook
+    const zapierUrl = 'https://hooks.zapier.com/hooks/catch/27828973/4bp2lvy/';
+    const zapierResponse = await fetch(zapierUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (!zapierResponse.ok) {
+      throw new Error(`Zapier returned status ${zapierResponse.status}`);
+    }
+
+    return res.status(200).json({
+      success: true,
+      message: 'Form submitted successfully',
+    });
+  } catch (error) {
+    console.error('Error forwarding to Zapier:', error);
+    return res.status(500).json({
+      error: 'Failed to submit form',
+      message: error instanceof Error ? error.message : 'Unknown error',
+    });
+  }
+}
