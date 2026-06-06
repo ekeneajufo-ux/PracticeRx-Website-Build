@@ -3,6 +3,10 @@ import { Upload, CheckCircle } from 'lucide-react';
 
 const OnboardPage = () => {
   const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    contactEmail: '',
+    contactPhone: '',
     practiceName: '',
     specialty: [] as string[],
     yearsInPractice: '',
@@ -91,8 +95,11 @@ const OnboardPage = () => {
     const newErrors: Record<string, string> = {};
 
     if (section === 1) {
+      if (!formData.firstName.trim()) newErrors.firstName = 'First name is required';
+      if (!formData.lastName.trim()) newErrors.lastName = 'Last name is required';
+      if (!formData.contactEmail.trim()) newErrors.contactEmail = 'Contact email is required';
+      if (!formData.contactPhone.trim()) newErrors.contactPhone = 'Contact phone is required';
       if (formData.specialty.length === 0) newErrors.specialty = 'Select at least one specialty';
-      if (!formData.businessPhone.trim()) newErrors.businessPhone = 'Phone is required';
     }
 
     if (section === 2) {
@@ -179,7 +186,7 @@ const OnboardPage = () => {
   };
 
   if (submitted) {
-    return <ThankYouPage practiceName={formData.practiceName || 'New Practice'} />;
+    return <ThankYouPage practiceName={formData.practiceName || formData.firstName + ' ' + formData.lastName} />;
   }
 
   return (
@@ -201,11 +208,42 @@ const OnboardPage = () => {
         <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-lg p-8">
           {currentSection === 1 && (
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Basic Practice Information</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h2>
+              
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
+                  <input type="text" name="firstName" value={formData.firstName} onChange={handleInputChange} placeholder="John" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
+                  {errors.firstName && <p className="text-red-500 text-sm mt-1">{errors.firstName}</p>}
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Last Name *</label>
+                  <input type="text" name="lastName" value={formData.lastName} onChange={handleInputChange} placeholder="Smith" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
+                  {errors.lastName && <p className="text-red-500 text-sm mt-1">{errors.lastName}</p>}
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Contact Email *</label>
+                <input type="email" name="contactEmail" value={formData.contactEmail} onChange={handleInputChange} placeholder="john@example.com" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
+                {errors.contactEmail && <p className="text-red-500 text-sm mt-1">{errors.contactEmail}</p>}
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Contact Phone *</label>
+                <input type="tel" name="contactPhone" value={formData.contactPhone} onChange={handleInputChange} placeholder="(555) 123-4567" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
+                {errors.contactPhone && <p className="text-red-500 text-sm mt-1">{errors.contactPhone}</p>}
+              </div>
+
+              <div className="border-t border-gray-200 pt-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">Practice Information</h3>
+              </div>
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Practice Name</label>
                 <input type="text" name="practiceName" value={formData.practiceName} onChange={handleInputChange} placeholder="e.g., Advanced Cardiology Associates (optional if not yet chosen)" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
               </div>
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-3">Specialty/Specialties * (Select all that apply)</label>
                 <div className="space-y-2">
@@ -218,18 +256,20 @@ const OnboardPage = () => {
                 </div>
                 {errors.specialty && <p className="text-red-500 text-sm mt-2">{errors.specialty}</p>}
               </div>
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Years in Practice (if existing practice)</label>
                 <input type="text" name="yearsInPractice" value={formData.yearsInPractice} onChange={handleInputChange} placeholder="e.g., 10 years" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
               </div>
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Location(s) / Service Areas</label>
                 <textarea name="locations" value={formData.locations} onChange={handleInputChange} placeholder="e.g., Miami, FL; Tampa, FL" rows={3} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
               </div>
+
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Business Phone *</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Business Phone</label>
                 <input type="tel" name="businessPhone" value={formData.businessPhone} onChange={handleInputChange} placeholder="(555) 123-4567" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
-                {errors.businessPhone && <p className="text-red-500 text-sm mt-1">{errors.businessPhone}</p>}
               </div>
             </div>
           )}
