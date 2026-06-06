@@ -20,6 +20,7 @@ import { BookPage } from "./pages/BookPage";
 import { ThankYouPage } from "./pages/ThankYouPage";
 import { SubscriptionsPage } from "./pages/SubscriptionsPage";
 import { FindAProviderPage } from "./pages/FindAProviderPage";
+import { CalendarWidget } from "./components/CalendarWidget";
 import OnboardPage from "./pages/OnboardPage";
 
 function ExternalRedirect({ to }: { to: string }) {
@@ -42,7 +43,7 @@ function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/resources" element={<Navigate to="/blog" replace />} />
             <Route path="/guide" element={<ExternalRedirect to="https://funnels.practicerxconsulting.com/freeguide-page" />} />
-            <Route path="/widget/bookings/kick-off-callpracticrx" element={<ExternalRedirect to="https://funnels.practicerxconsulting.com/kick-off-callpracticrx" />} />
+            <Route path="/widget/bookings/kick-off-callpracticrx" element={<CalendarWidget />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/subscriptions" element={<SubscriptionsPage />} />
             <Route path="/blog/vaccine-costs-pediatric-dpc" element={<VaccineCostsBlogPage />} />

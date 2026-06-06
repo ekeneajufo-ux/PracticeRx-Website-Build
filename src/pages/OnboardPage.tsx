@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Upload, CheckCircle } from 'lucide-react';
+import { Upload, CheckCircle, Lock } from 'lucide-react';
 
 const OnboardPage = () => {
   const [formData, setFormData] = useState({
@@ -153,7 +153,6 @@ const OnboardPage = () => {
     setIsSubmitting(true);
 
     try {
-      // Prepare form data for submission
       const submitData = {
         ...formData,
         submittedAt: new Date().toISOString(),
@@ -161,7 +160,6 @@ const OnboardPage = () => {
         fileNames: uploadedFiles.map(f => f.name)
       };
 
-      // Send to backend API (which forwards to Zapier)
       const response = await fetch('/api/submit-onboarding', {
         method: 'POST',
         headers: {
@@ -488,12 +486,12 @@ const OnboardPage = () => {
           {currentSection === 7 && (
             <div className="space-y-6">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Secure Credentials & Access</h2>
-              <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
                 <div className="flex gap-3">
-                  <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0" />
+                  <Lock className="w-6 h-6 text-blue-600 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-green-900 mb-1">We Use Bitwarden</h3>
-                    <p className="text-sm text-green-800">We use free Bitwarden for secure password sharing. You'll receive setup instructions after submission.</p>
+                    <h3 className="font-semibold text-blue-900 mb-1">Encrypted Portal Access</h3>
+                    <p className="text-sm text-blue-800">You'll receive an invite to a secure, encrypted portal where you can upload and manage all sensitive credentials, logins, passwords, and business files safely.</p>
                   </div>
                 </div>
               </div>
@@ -627,8 +625,8 @@ const ThankYouPage = ({ practiceName }: { practiceName: string }) => {
           <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 mb-8 text-left">
             <h2 className="text-lg font-bold text-gray-900 mb-4">⚡ YOUR IMMEDIATE ACTION ITEMS</h2>
             <ol className="space-y-3 text-sm text-gray-700">
-              <li className="flex gap-3"><span className="font-bold text-yellow-600">1.</span><span><strong>Set up Bitwarden account</strong> (free) — Instructions & link coming to your email</span></li>
-              <li className="flex gap-3"><span className="font-bold text-yellow-600">2.</span><span><strong>Add your credentials</strong> to the shared vault (domain, hosting, email, social, ads, etc.)</span></li>
+              <li className="flex gap-3"><span className="font-bold text-yellow-600">1.</span><span><strong>Receive your encrypted portal invite</strong> — Check your email for secure access credentials</span></li>
+              <li className="flex gap-3"><span className="font-bold text-yellow-600">2.</span><span><strong>Upload sensitive credentials</strong> to the portal (domain, hosting, email, social, ads logins, passwords, etc.) — All data is encrypted and secure</span></li>
               <li className="flex gap-3"><span className="font-bold text-yellow-600">3.</span><span><strong>Schedule your kickoff call</strong> using the calendar link below</span></li>
             </ol>
           </div>
@@ -637,7 +635,7 @@ const ThankYouPage = ({ practiceName }: { practiceName: string }) => {
             <p className="text-gray-700 mb-4">📧 <strong>Check your email shortly!</strong></p>
             <ul className="text-sm text-gray-600 list-disc list-inside space-y-1">
               <li>Complete 2-week timeline & next steps</li>
-              <li>Bitwarden setup instructions (IMPORTANT)</li>
+              <li>Encrypted portal setup & access link (IMPORTANT)</li>
               <li>Your customized onboarding checklist (PDF)</li>
               <li>Calendar link to schedule your call</li>
             </ul>
