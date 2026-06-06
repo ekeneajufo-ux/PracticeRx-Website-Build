@@ -1,11 +1,11 @@
 import { ArrowRight, Clock } from "lucide-react";
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useSEO } from "../hooks/useSEO";
 import { AISection } from "../components/AISection";
 import { FAQSection } from "../components/FAQSection";
 import { CTABanner } from "../components/CTABanner";
 import { LeadMagnetPopup } from "../components/LeadMagnetPopup";
+import blogData from "../../public/blog-data.json";
 
 /* ─── Types ─── */
 interface BlogPost {
@@ -15,7 +15,7 @@ interface BlogPost {
   excerpt: string;
   coverImageUrl?: string;
   tags: string[];
-  publishedAt?: number;
+  publishedAt?: string | number;
   readTime?: string;
 }
 
@@ -65,7 +65,7 @@ const STATIC_POSTS: BlogPost[] = [
   },
 ];
 
-/* Static slugs — these have dedicated page components, skip them in Convex list */
+/* Static slugs — these have dedicated page components, skip them in blog data */
 const STATIC_SLUGS = new Set(STATIC_POSTS.map((p) => p.slug));
 
 /* Per-slug image position overrides */
@@ -82,36 +82,27 @@ export function ResourcesPage() {
     path: "/blog",
   });
 
-  const [convexPosts, setConvexPosts] = useState<BlogPost[]>([]);
-  const [loading, setLoading] = useState(true);
+  // Convert blog data posts to BlogPost interface and filter out static duplicates
+  const dynamicPosts: BlogPost[] = (blogData.blogs as any[])
+    .filter((p) => !STATIC_SLUGS.has(p.slug))
+    .map((p) => ({
+      _id: p.id,
+      slug: p.slug,
+      title: p.title,
+      excerpt: p.excerpt,
+      coverImageUrl: p.coverImageUrl,
+      tags: p.tags || [],
+      publishedAt: p.publishedAt,
+    }));
 
-  useEffect(() => {
-    const convexUrl = import.meta.env.VITE_CONVEX_URL as string | undefined;
-    if (!convexUrl) {
-      setLoading(false);
-      return;
+  // Merge static posts + dynamic posts, sorted by publishedAt descending
+  const allArticles: BlogPost[] = [...STATIC_POSTS, ...dynamicPosts].sort(
+    (a, b) => {
+      const dateA = a.publishedAt ? new Date(a.publishedAt).getTime() : 0;
+      const dateB = b.publishedAt ? new Date(b.publishedAt).getTime() : 0;
+      return dateB - dateA;
     }
-    fetch(`${convexUrl}/api/query`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        path: "blogPosts:listPublished",
-        args: {},
-        format: "json",
-      }),
-    })
-      .then((r) => r.json())
-      .then((data) => {
-        const posts: BlogPost[] = Array.isArray(data?.value) ? data.value : [];
-        // Filter out static slugs to avoid duplicates
-        setConvexPosts(posts.filter((p) => !STATIC_SLUGS.has(p.slug)));
-      })
-      .catch(() => {/* non-fatal */})
-      .finally(() => setLoading(false));
-  }, []);
-
-  // Static posts first, then dynamic Convex posts
-  const allArticles: BlogPost[] = [...STATIC_POSTS, ...convexPosts];
+  );
 
   return (
     <div className="bg-cream min-h-screen">
@@ -135,19 +126,15 @@ export function ResourcesPage() {
       {/* Article Cards */}
       <section className="pb-8 md:pb-10">
         <div className="container">
-          {loading && convexPosts.length === 0 ? (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {STATIC_POSTS.map((article) => (
-                <ArticleCard key={article._id} article={article} />
-              ))}
-            </div>
-          ) : (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {allArticles.map((article) => (
-                <ArticleCard key={article._id} article={article} coverPosition={COVER_POSITION[article.slug]} />
-              ))}
-            </div>
-          )}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {allArticles.map((article) => (
+              <ArticleCard
+                key={article._id}
+                article={article}
+                coverPosition={COVER_POSITION[article.slug]}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
