@@ -20,6 +20,7 @@ import { BookPage } from "./pages/BookPage";
 import { ThankYouPage } from "./pages/ThankYouPage";
 import { SubscriptionsPage } from "./pages/SubscriptionsPage";
 import { FindAProviderPage } from "./pages/FindAProviderPage";
+import OnboardPage from "./pages/OnboardPage";
 
 function ExternalRedirect({ to }: { to: string }) {
   useEffect(() => {
@@ -53,6 +54,8 @@ function App() {
             <Route path="/find-a-provider" element={<FindAProviderPage />} />
             <Route path="/book" element={<BookPage />} />
             <Route path="/thank-you" element={<ThankYouPage />} />
+            {/* Client Onboarding - Hidden Link */}
+            <Route path="/onboard" element={<OnboardPage />} />
           </Route>
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
