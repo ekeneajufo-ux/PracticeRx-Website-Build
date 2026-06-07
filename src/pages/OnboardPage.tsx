@@ -1,7 +1,8 @@
 import React, { useState, useRef } from 'react';
 import { Upload, CheckCircle, Lock } from 'lucide-react';
 
-// Form submission sends directly to Zapier webhook
+const ZAPIER_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/27828973/4bpi7p9/';
+
 const OnboardPage = () => {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -196,12 +197,7 @@ const OnboardPage = () => {
         'Submitted At': new Date().toISOString()
       };
 
-      const webhookUrl = process.env.REACT_APP_ZAPIER_WEBHOOK_URL;
-      if (!webhookUrl) {
-        throw new Error('Webhook URL not configured');
-      }
-
-      const response = await fetch(webhookUrl, {
+      const response = await fetch(ZAPIER_WEBHOOK_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
