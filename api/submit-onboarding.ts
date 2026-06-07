@@ -26,7 +26,7 @@ export default async function handler(
     const formData = req.body;
 
     // Forward to Zapier webhook
-    const zapierUrl = 'https://hooks.zapier.com/hooks/catch/27828973/4bp2lvy/';
+    const zapierUrl = process.env.ZAPIER_WEBHOOK_URL || 'https://hooks.zapier.com/hooks/catch/27828973/4bp56wt/';
     const zapierResponse = await fetch(zapierUrl, {
       method: 'POST',
       headers: {

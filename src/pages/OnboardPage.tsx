@@ -1,8 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Upload, CheckCircle, Lock } from 'lucide-react';
 
-// Zapier webhook URL from environment variable (never commit secrets to GitHub)
-const ZAPIER_WEBHOOK_URL = import.meta.env.VITE_ZAPIER_WEBHOOK_URL || '';
 
 const OnboardPage = () => {
   const [formData, setFormData] = useState({
@@ -153,11 +151,6 @@ const OnboardPage = () => {
 
     if (!validateSection(8)) return;
 
-    if (!ZAPIER_WEBHOOK_URL) {
-      setErrors({ submit: 'Webhook URL not configured. Please contact support.' });
-      return;
-    }
-
     setIsSubmitting(true);
 
     try {
@@ -204,8 +197,8 @@ const OnboardPage = () => {
         'Submitted At': new Date().toISOString()
       };
 
-      // Send to Zapier webhook as JSON
-      const zapierResponse = await fetch(ZAPIER_WEBHOOK_URL, {
+      // Route through serverless proxy to avoid CORS issues with Zapier
+      const zapierResponse = await fetch('/api/submit-onboarding', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -214,24 +207,9 @@ const OnboardPage = () => {
       });
 
       if (!zapierResponse.ok) {
-        throw new Error('Failed to submit to Zapier');
+        throw new Error('Failed to submit form');
       }
 
-      // Also try to send to internal API (non-critical)
-      fetch('/api/submit-onboarding', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ...formData,
-          submittedAt: new Date().toISOString(),
-          filesCount: uploadedFiles.length,
-          fileNames: uploadedFiles.map(f => f.name)
-        }),
-      }).catch(err => console.error('Internal API error (non-critical):', err));
-
-      // Show thank you page if Zapier succeeded
       setSubmitted(true);
     } catch (error) {
       console.error('Error submitting form:', error);
