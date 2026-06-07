@@ -1,6 +1,5 @@
 import { CheckCircle, Mail, Calendar, Download } from "lucide-react";
 import { Link, useSearchParams } from "react-router-dom";
-import { useEffect } from "react";
 
 function getProductMessage(product: string | null) {
   if (product === "fm-dpc-guide") {
@@ -35,21 +34,6 @@ export function ThankYouPage() {
   const [searchParams] = useSearchParams();
   const product = searchParams.get("product");
   const { heading, message, showCallCard, icon } = getProductMessage(product);
-
-  useEffect(() => {
-    // Load GHL booking widget script
-    const script = document.createElement("script");
-    script.src = "https://www.practicerxconsulting.com/js/form_embed.js";
-    script.async = true;
-    script.type = "text/javascript";
-    document.body.appendChild(script);
-
-    return () => {
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-    };
-  }, []);
 
   return (
     <div>
@@ -140,27 +124,6 @@ export function ThankYouPage() {
               )}
             </div>
 
-            {/* GHL Booking Calendar */}
-            {showCallCard && (
-              <div className="mt-12 max-w-2xl mx-auto">
-                <h2 className="text-2xl font-semibold text-navy mb-6">
-                  Schedule a Kick Off Call
-                </h2>
-                <iframe
-                  src="https://www.practicerxconsulting.com/widget/booking/IzDYuXLlWCrKUe5a5ZTa"
-                  style={{
-                    width: "100%",
-                    border: "none",
-                    overflow: "hidden",
-                    minHeight: "600px",
-                  }}
-                  scrolling="no"
-                  id="IzDYuXLlWCrKUe5a5ZTa_1780798405409"
-                  title="Schedule a Kick Off Call"
-                />
-              </div>
-            )}
-
             {/* Back link */}
             <div className="mt-10">
               <Link
@@ -173,6 +136,9 @@ export function ThankYouPage() {
           </div>
         </div>
       </section>
+
+      {/* Calendar anchor for GHL Calendar block */}
+      {showCallCard && <div id="book-call" style={{ display: "block", height: "1px" }} />}
     </div>
   );
 }
