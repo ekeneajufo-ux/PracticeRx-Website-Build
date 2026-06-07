@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Upload, CheckCircle, Lock } from 'lucide-react';
 
 // Zapier webhook URL for form submissions
@@ -610,6 +610,18 @@ const ThankYouPage = ({ practiceName }: { practiceName: string }) => {
   launchDate.setDate(launchDate.getDate() + 14);
   const formattedDate = launchDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
+  useEffect(() => {
+    // Load the GHL form embed script
+    const script = document.createElement('script');
+    script.src = 'https://www.practicerxconsulting.com/js/form_embed.js';
+    script.type = 'text/javascript';
+    document.body.appendChild(script);
+    
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-green-50 to-white py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-2xl mx-auto">
@@ -660,8 +672,15 @@ const ThankYouPage = ({ practiceName }: { practiceName: string }) => {
             </ul>
           </div>
 
-          <div className="flex flex-col gap-4 justify-center mb-8">
-            <a href="https://calendly.com/ekene-ajufo/kickoff-call" className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition text-center">Schedule Kickoff Call</a>
+          <div className="mb-8">
+            <h3 className="text-lg font-bold text-gray-900 mb-4">📅 Schedule Your Kickoff Call</h3>
+            <iframe 
+              src="https://www.practicerxconsulting.com/widget/booking/IzDYuXLlWCrKUe5a5ZTa" 
+              style={{ width: '100%', border: 'none', overflow: 'hidden' }} 
+              scrolling="no" 
+              id="IzDYuXLlWCrKUe5a5ZTa_1780792919046"
+              title="Schedule Kickoff Call"
+            />
           </div>
 
           <div className="border-t border-gray-200 pt-6 text-sm text-gray-600">
