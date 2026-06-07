@@ -4,9 +4,8 @@ import { Search, MapPin, ChevronLeft, ChevronRight, Building2, Filter, ExternalL
 import { PROVIDERS, STATES, STATE_NAMES, decodeUrl, type Provider } from "../data/providers";
 import { Link } from "react-router-dom";
 
-const USMap = lazy(() =>
-  import("../components/USMap").then((m) => ({ default: m.USMap }))
-);
+// USMap temporarily removed due to react-simple-maps dependency conflict
+// Can be re-added with alternative mapping library (Leaflet, Mapbox, etc.)
 
 const PER_PAGE = 24;
 
@@ -111,37 +110,7 @@ export function FindAProviderPage() {
         </div>
       </section>
 
-      {/* Interactive Map */}
-      <section className="bg-cream pt-8 pb-4">
-        <div className="container">
-          <div className="max-w-4xl mx-auto">
-            <h2
-              className="text-center text-xl md:text-2xl font-semibold text-navy mb-2"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
-              Click a state to explore providers
-            </h2>
-            <p className="text-center text-sm text-navy/50 mb-4">
-              Darker states have more DPC practices listed
-            </p>
-            <Suspense
-              fallback={
-                <div className="w-full h-64 flex items-center justify-center text-navy/30 text-sm">
-                  Loading map…
-                </div>
-              }
-            >
-              <USMap
-                stateCounts={stateCounts}
-                selectedState={stateFilter}
-                onStateSelect={handleMapStateSelect}
-              />
-            </Suspense>
-          </div>
-        </div>
-      </section>
-
-      {/* Search + Filter Bar */}
+      {/* Search + Filter Bar (moved up since map is removed) */}
       <section id="provider-results" className="bg-cream pt-6 pb-6 sticky top-16 z-40 border-b border-navy/5">
         <div className="container">
           <div className="max-w-4xl mx-auto">
