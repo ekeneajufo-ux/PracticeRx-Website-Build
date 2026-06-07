@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback, Suspense, lazy } from "react";
+import { useState, useMemo, useCallback } from "react";
 import { useSEO } from "../hooks/useSEO";
 import { Search, MapPin, ChevronLeft, ChevronRight, Building2, Filter, ExternalLink } from "lucide-react";
 import { PROVIDERS, STATES, STATE_NAMES, decodeUrl, type Provider } from "../data/providers";
@@ -59,16 +59,6 @@ export function FindAProviderPage() {
   const handleStateFilter = useCallback((val: string) => {
     setStateFilter(val);
     setPage(1);
-  }, []);
-
-  const handleMapStateSelect = useCallback((abbr: string) => {
-    setStateFilter(abbr);
-    setPage(1);
-    // Scroll to results on mobile
-    const el = document.getElementById("provider-results");
-    if (el) {
-      setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 100);
-    }
   }, []);
 
   return (
