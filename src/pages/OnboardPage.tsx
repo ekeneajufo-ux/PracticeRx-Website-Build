@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Upload, CheckCircle, Lock } from 'lucide-react';
 
-const ZAPIER_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/27828973/4bpi7p9/';
 
 const OnboardPage = () => {
   const [formData, setFormData] = useState({
@@ -197,7 +196,7 @@ const OnboardPage = () => {
         'Submitted At': new Date().toISOString()
       };
 
-      const response = await fetch(ZAPIER_WEBHOOK_URL, {
+      const response = await fetch('/api/submit-onboarding', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
