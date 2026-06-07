@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Upload, CheckCircle, Lock } from 'lucide-react';
 
 // Zapier webhook URL for form submissions
-const ZAPIER_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/27828973/4bp96gc/';
+const ZAPIER_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/367574387/';
 
 const OnboardPage = () => {
   const [formData, setFormData] = useState({
