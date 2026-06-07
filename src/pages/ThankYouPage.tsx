@@ -39,12 +39,15 @@ export function ThankYouPage() {
   useEffect(() => {
     // Load GHL booking widget script
     const script = document.createElement("script");
-    script.src = "https://www.practicerxconsulting.com/form_embed.js";
+    script.src = "https://www.practicerxconsulting.com/js/form_embed.js";
     script.async = true;
+    script.type = "text/javascript";
     document.body.appendChild(script);
 
     return () => {
-      document.body.removeChild(script);
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
     };
   }, []);
 
@@ -147,10 +150,12 @@ export function ThankYouPage() {
                   src="https://www.practicerxconsulting.com/widget/booking/IzDYuXLlWCrKUe5a5ZTa"
                   style={{
                     width: "100%",
-                    height: "600px",
                     border: "none",
-                    borderRadius: "8px",
+                    overflow: "hidden",
+                    minHeight: "600px",
                   }}
+                  scrolling="no"
+                  id="IzDYuXLlWCrKUe5a5ZTa_1780798405409"
                   title="Schedule a Kick Off Call"
                 />
               </div>
