@@ -1,5 +1,6 @@
 import { CheckCircle, Mail, Calendar, Download } from "lucide-react";
 import { Link, useSearchParams } from "react-router-dom";
+import { useEffect } from "react";
 
 function getProductMessage(product: string | null) {
   if (product === "fm-dpc-guide") {
@@ -34,6 +35,18 @@ export function ThankYouPage() {
   const [searchParams] = useSearchParams();
   const product = searchParams.get("product");
   const { heading, message, showCallCard, icon } = getProductMessage(product);
+
+  useEffect(() => {
+    // Load GHL booking widget script
+    const script = document.createElement("script");
+    script.src = "https://www.practicerxconsulting.com/form_embed.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   return (
     <div>
@@ -123,6 +136,25 @@ export function ThankYouPage() {
                 </div>
               )}
             </div>
+
+            {/* GHL Booking Calendar */}
+            {showCallCard && (
+              <div className="mt-12 max-w-2xl mx-auto">
+                <h2 className="text-2xl font-semibold text-navy mb-6">
+                  Schedule a Kick Off Call
+                </h2>
+                <iframe
+                  src="https://www.practicerxconsulting.com/widget/booking/IzDYuXLlWCrKUe5a5ZTa"
+                  style={{
+                    width: "100%",
+                    height: "600px",
+                    border: "none",
+                    borderRadius: "8px",
+                  }}
+                  title="Schedule a Kick Off Call"
+                />
+              </div>
+            )}
 
             {/* Back link */}
             <div className="mt-10">
