@@ -114,15 +114,29 @@ export function ThankYouPage() {
                   </div>
                   <div className="text-left">
                     <p className="text-sm font-medium text-navy">
-                      Call scheduling
+                      Schedule a call
                     </p>
                     <p className="text-xs text-navy/50">
-                      Within 1 business day
+                      At your earliest convenience
                     </p>
                   </div>
                 </div>
               )}
             </div>
+
+            {/* Schedule call button */}
+            {showCallCard && (
+              <div className="mt-8">
+                <a
+                  href="https://www.practicerxconsulting.com/widget/booking/IzDYuXLlWCrKUe5a5ZTa"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold bg-gold text-navy rounded-lg hover:bg-gold/90 transition-colors"
+                >
+                  Schedule Your Kickoff Call
+                </a>
+              </div>
+            )}
 
             {/* Back link */}
             <div className="mt-10">
@@ -136,9 +150,6 @@ export function ThankYouPage() {
           </div>
         </div>
       </section>
-
-      {/* Calendar anchor for GHL Calendar block */}
-      {showCallCard && <div id="book-call" style={{ display: "block", height: "1px" }} />}
     </div>
   );
 }
