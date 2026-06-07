@@ -128,7 +128,7 @@ export function ThankYouPage() {
             {showCallCard && (
               <div className="mt-8">
                 <a
-                  href="https://www.practicerxconsulting.com/widget/booking/IzDYuXLlWCrKUe5a5ZTa"
+                  href="https://calendar.app.google/nvFA7exTXZTftJbc8"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold bg-gold text-navy rounded-lg hover:bg-gold/90 transition-colors"
