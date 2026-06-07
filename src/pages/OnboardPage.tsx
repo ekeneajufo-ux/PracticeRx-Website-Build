@@ -161,19 +161,56 @@ const OnboardPage = () => {
     setIsSubmitting(true);
 
     try {
-      // Prepare form data for Zapier webhook (to bypass CORS)
-      const formDataBody = new FormData();
-      formDataBody.append('First Name', formData.firstName);
-      formDataBody.append('Last Name', formData.lastName);
-      formDataBody.append('Contact Email', formData.contactEmail);
-      formDataBody.append('Contact Phone', formData.contactPhone);
-      formDataBody.append('Practice Name', formData.practiceName);
-      formDataBody.append('Specialty', formData.specialty.join(', '));
+      // Prepare data for Zapier - send as JSON for clean parsing
+      const zapierData = {
+        'First Name': formData.firstName,
+        'Last Name': formData.lastName,
+        'Contact Email': formData.contactEmail,
+        'Contact Phone': formData.contactPhone,
+        'Practice Name': formData.practiceName,
+        'Specialty': formData.specialty.join(', '),
+        'Years in Practice': formData.yearsInPractice,
+        'Locations': formData.locations,
+        'Business Phone': formData.businessPhone,
+        'Has Domain': formData.hasDomain,
+        'Current Domain': formData.currentDomain,
+        'Current Host': formData.currentHost,
+        'Website Platform': formData.websitePlatform,
+        'Website Goal': formData.websiteGoal,
+        'Social Media Platforms': formData.socialMediaPlatforms.join(', '),
+        'Google Business Profile': formData.googleBusinessProfile,
+        'Runs Ads': formData.runsAds,
+        'Ad Platforms': formData.adPlatforms.join(', '),
+        'Ad Budget Range': formData.adBudgetRange,
+        'Interested in Ad Management': formData.interestedInAdManagement,
+        'Has Company Email': formData.hasCompanyEmail,
+        'Company Email': formData.companyEmail,
+        'Email Provider': formData.companyEmailProvider,
+        'Notification Email': formData.notificationEmail,
+        'Scheduling System': formData.schedulingSystem,
+        'Email Marketing Tool': formData.emailMarketingTool,
+        'Interested in AI Automation': formData.interestedInAIAutomation,
+        'AI Automation Services': formData.aiAutomationServices.join(', '),
+        'CRM Software': formData.crmSoftware,
+        'Payment Processor': formData.paymentProcessor,
+        'Other Tools': formData.otherTools,
+        'Provides Admin Access': formData.providesAdminAccess,
+        'Services Interested': formData.servicesInterested.join(', '),
+        'Budget Range': formData.budgetRange,
+        'Timeline Preference': formData.timelinePreference,
+        'Additional Info': formData.additionalInfo,
+        'Files Count': uploadedFiles.length,
+        'File Names': uploadedFiles.map(f => f.name).join(', '),
+        'Submitted At': new Date().toISOString()
+      };
 
-      // Send to Zapier webhook (primary submission) - using FormData to bypass CORS
+      // Send to Zapier webhook as JSON
       const zapierResponse = await fetch(ZAPIER_WEBHOOK_URL, {
         method: 'POST',
-        body: formDataBody,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(zapierData),
       });
 
       if (!zapierResponse.ok) {
@@ -181,19 +218,17 @@ const OnboardPage = () => {
       }
 
       // Also try to send to internal API (non-critical)
-      const submitData = {
-        ...formData,
-        submittedAt: new Date().toISOString(),
-        filesCount: uploadedFiles.length,
-        fileNames: uploadedFiles.map(f => f.name)
-      };
-
       fetch('/api/submit-onboarding', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(submitData),
+        body: JSON.stringify({
+          ...formData,
+          submittedAt: new Date().toISOString(),
+          filesCount: uploadedFiles.length,
+          fileNames: uploadedFiles.map(f => f.name)
+        }),
       }).catch(err => console.error('Internal API error (non-critical):', err));
 
       // Show thank you page if Zapier succeeded
