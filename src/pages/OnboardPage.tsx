@@ -1,7 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { Upload, CheckCircle, Lock } from 'lucide-react';
 
-
+// Form submission sends directly to Zapier webhook
 const OnboardPage = () => {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -154,7 +154,6 @@ const OnboardPage = () => {
     setIsSubmitting(true);
 
     try {
-      // Prepare data for Zapier - send as JSON for clean parsing
       const zapierData = {
         'First Name': formData.firstName,
         'Last Name': formData.lastName,
@@ -197,8 +196,12 @@ const OnboardPage = () => {
         'Submitted At': new Date().toISOString()
       };
 
-      // Send directly to Zapier webhook
-      const zapierResponse = await fetch(process.env.REACT_APP_ZAPIER_WEBHOOK_URL || '', {
+      const webhookUrl = process.env.REACT_APP_ZAPIER_WEBHOOK_URL;
+      if (!webhookUrl) {
+        throw new Error('Webhook URL not configured');
+      }
+
+      const response = await fetch(webhookUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -206,8 +209,8 @@ const OnboardPage = () => {
         body: JSON.stringify(zapierData),
       });
 
-      if (!zapierResponse.ok) {
-        throw new Error(`Failed to submit form - Status: ${zapierResponse.status}`);
+      if (!response.ok) {
+        throw new Error(`Webhook failed: ${response.status}`);
       }
 
       setSubmitted(true);
