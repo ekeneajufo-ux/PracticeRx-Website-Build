@@ -197,8 +197,8 @@ const OnboardPage = () => {
         'Submitted At': new Date().toISOString()
       };
 
-      // Route through serverless proxy to avoid CORS issues with Zapier
-      const zapierResponse = await fetch('/api/submit-onboarding', {
+      // Send directly to Zapier webhook
+      const zapierResponse = await fetch(process.env.REACT_APP_ZAPIER_WEBHOOK_URL || '', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -207,7 +207,7 @@ const OnboardPage = () => {
       });
 
       if (!zapierResponse.ok) {
-        throw new Error('Failed to submit form');
+        throw new Error(`Failed to submit form - Status: ${zapierResponse.status}`);
       }
 
       setSubmitted(true);
@@ -628,18 +628,6 @@ const ThankYouPage = ({ practiceName }: { practiceName: string }) => {
   launchDate.setDate(launchDate.getDate() + 14);
   const formattedDate = launchDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
-  useEffect(() => {
-    // Load the GHL form embed script
-    const script = document.createElement('script');
-    script.src = 'https://www.practicerxconsulting.com/js/form_embed.js';
-    script.type = 'text/javascript';
-    document.body.appendChild(script);
-    
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-green-50 to-white py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-2xl mx-auto">
@@ -692,13 +680,14 @@ const ThankYouPage = ({ practiceName }: { practiceName: string }) => {
 
           <div className="mb-8">
             <h3 className="text-lg font-bold text-gray-900 mb-4">📅 Schedule Your Kickoff Call</h3>
-            <iframe 
-              src="https://www.practicerxconsulting.com/widget/booking/IzDYuXLlWCrKUe5a5ZTa" 
-              style={{ width: '100%', border: 'none', overflow: 'hidden' }} 
-              scrolling="no" 
-              id="IzDYuXLlWCrKUe5a5ZTa_1780792919046"
-              title="Schedule Kickoff Call"
-            />
+            <a
+              href="https://calendar.app.google/nvFA7exTXZTftJbc8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition"
+            >
+              Schedule Your Kickoff Call
+            </a>
           </div>
 
           <div className="border-t border-gray-200 pt-6 text-sm text-gray-600">
