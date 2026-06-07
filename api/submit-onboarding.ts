@@ -23,7 +23,8 @@ export default async function handler(
     const formData = req.body;
     const payload = JSON.stringify(formData);
 
-    const zapierUrl = process.env.ZAPIER_WEBHOOK_URL || 'https://hooks.zapier.com/hooks/catch/27828973/4bpi7p9/';
+    const zapierUrl = process.env.ZAPIER_WEBHOOK_URL;
+    if (!zapierUrl) { return res.status(500).json({ error: 'Webhook not configured' }); }
     const url = new URL(zapierUrl);
 
     await new Promise<void>((resolve, reject) => {
