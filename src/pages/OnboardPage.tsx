@@ -156,23 +156,19 @@ const OnboardPage = () => {
     setIsSubmitting(true);
 
     try {
-      // Prepare Zapier payload with key fields
-      const zapierPayload = {
-        'First Name': formData.firstName,
-        'Last Name': formData.lastName,
-        'Contact Email': formData.contactEmail,
-        'Contact Phone': formData.contactPhone,
-        'Practice Name': formData.practiceName,
-        'Specialty': formData.specialty.join(', '),
-      };
+      // Prepare form data for Zapier webhook (to bypass CORS)
+      const formDataBody = new FormData();
+      formDataBody.append('First Name', formData.firstName);
+      formDataBody.append('Last Name', formData.lastName);
+      formDataBody.append('Contact Email', formData.contactEmail);
+      formDataBody.append('Contact Phone', formData.contactPhone);
+      formDataBody.append('Practice Name', formData.practiceName);
+      formDataBody.append('Specialty', formData.specialty.join(', '));
 
-      // Send to Zapier webhook (primary submission)
+      // Send to Zapier webhook (primary submission) - using FormData to bypass CORS
       const zapierResponse = await fetch(ZAPIER_WEBHOOK_URL, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(zapierPayload),
+        body: formDataBody,
       });
 
       if (!zapierResponse.ok) {
