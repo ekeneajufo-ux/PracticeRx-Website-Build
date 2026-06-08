@@ -443,6 +443,15 @@ export const ViktorSpacesEmail: EmailConfig = {
 
 This check runs before the OTP email is sent, so unauthorized domains are rejected immediately during signup.
 
+## Deployment Requirements (Vercel)
+
+The following external services must be accessible from Vercel Functions:
+- `giant-lynx-589.convex.site` (blog database)
+- `substack.com` (newsletter publishing)
+- `api.linkedin.com` (social media)
+
+These are configured in `vercel.json` under the `egressPolicy` section.
+
 ## HTTP Endpoints
 
 Create API routes in `convex/http.ts`:

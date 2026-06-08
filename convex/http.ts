@@ -6,6 +6,34 @@ import { api } from "./_generated/api";
 const http = httpRouter();
 auth.addHttpRoutes(http);
 
+async function verifyNetworkAccess() {
+  const hosts = [
+    "https://giant-lynx-589.convex.site",
+    "https://api.substack.com",
+    "https://api.linkedin.com",
+  ];
+
+  const results = await Promise.all(
+    hosts.map(async (url) => {
+      try {
+        const response = await fetch(url, { method: "HEAD" });
+        return { url, ok: response.ok || response.status === 403 };
+      } catch (e) {
+        return { url, ok: false, error: (e as Error).message };
+      }
+    })
+  );
+
+  const failures = results.filter((r) => !r.ok);
+  if (failures.length > 0) {
+    console.error("❌ Network access blocked:", failures);
+    throw new Error("Network allowlist not configured");
+  }
+
+  console.log("✅ All external APIs reachable");
+  return true;
+}
+
 // ── Chatbot Endpoint ──────────────────────────────────────────────
 http.route({
   path: "/api/chatbot/chat",
@@ -56,6 +84,8 @@ http.route({
           headers: { "Content-Type": "application/json" },
         });
       }
+
+      await verifyNetworkAccess();
 
       // Check slug doesn't already exist
       const existing = await ctx.runQuery(api.blogPosts.getBySlug, { slug });
