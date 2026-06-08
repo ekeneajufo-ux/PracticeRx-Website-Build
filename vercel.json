@@ -5,21 +5,5 @@
       "source": "/((?!assets/|favicon|icon|og-image|apple-touch|physician-roadmap|hero-clinic|sitemap|robots|.*\\.(?:png|jpg|jpeg|gif|webp|svg|ico|xml|txt)).*)",
       "destination": "/index.html"
     }
-  ],
-  "functions": {
-    "convex/**": {
-      "memory": 3008,
-      "maxDuration": 60,
-      "egressPolicy": {
-        "allowedDomains": [
-          "giant-lynx-589.convex.site",
-          "*.convex.cloud",
-          "substack.com",
-          "api.substack.com",
-          "linkedin.com",
-          "api.linkedin.com"
-        ]
-      }
-    }
-  }
+  ]
 }
