@@ -16,7 +16,6 @@ import { useSEO } from "../hooks/useSEO";
 import { TurnstileWidget } from "../components/TurnstileWidget";
 import { CTABanner } from "../components/CTABanner";
 import { Testimonial } from "../components/Testimonial";
-import { FAQSection } from "../components/FAQSection";
 
 const GHL_AUDIT_FORM_ACTION = import.meta.env.VITE_GHL_AUDIT_FORM_ACTION ?? "";
 
