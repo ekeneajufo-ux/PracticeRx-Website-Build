@@ -1,13 +1,24 @@
-import { CheckCircle, Mail, Calendar, Download } from "lucide-react";
+import { CheckCircle, Mail, Calendar, Download, BarChart2 } from "lucide-react";
 import { Link, useSearchParams } from "react-router-dom";
 
 function getProductMessage(product: string | null) {
+  if (product === "free-audit") {
+    return {
+      heading: "Your audit is in progress!",
+      message:
+        "We're analyzing your practice right now. Your personalized Practice Freedom Audit will land in your inbox within 24 hours.",
+      showCallCard: false,
+      showAuditNote: true,
+      icon: <BarChart2 className="size-10 text-gold" />,
+    };
+  }
   if (product === "fm-dpc-guide") {
     return {
       heading: "Your guide is on its way!",
       message:
         "Your Family Medicine DPC Launch Guide is on its way! Check your inbox — your download link will arrive within the next few minutes.",
       showCallCard: false,
+      showAuditNote: false,
       icon: <Download className="size-10 text-green-600" />,
     };
   }
@@ -17,6 +28,7 @@ function getProductMessage(product: string | null) {
       message:
         "Your DPC Pediatric Vaccine Cost Management Guide is on its way! Check your inbox — your download link will arrive within the next few minutes.",
       showCallCard: false,
+      showAuditNote: false,
       icon: <Download className="size-10 text-green-600" />,
     };
   }
@@ -26,6 +38,7 @@ function getProductMessage(product: string | null) {
     message:
       "You'll receive a confirmation email at the address you provided within the next few minutes. Please check your spam folder if you don't see it.",
     showCallCard: true,
+    showAuditNote: false,
     icon: <CheckCircle className="size-10 text-green-600" />,
   };
 }
@@ -33,7 +46,7 @@ function getProductMessage(product: string | null) {
 export function ThankYouPage() {
   const [searchParams] = useSearchParams();
   const product = searchParams.get("product");
-  const { heading, message, showCallCard, icon } = getProductMessage(product);
+  const { heading, message, showCallCard, showAuditNote, icon } = getProductMessage(product);
 
   return (
     <div>
@@ -41,7 +54,7 @@ export function ThankYouPage() {
         <div className="container">
           <div className="max-w-2xl mx-auto text-center">
             {/* Success icon */}
-            <div className="w-20 h-20 rounded-full bg-green-50 flex items-center justify-center mx-auto mb-8">
+            <div className={`w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-8 ${showAuditNote ? "bg-gold/10" : "bg-green-50"}`}>
               {icon}
             </div>
 
@@ -66,8 +79,15 @@ export function ThankYouPage() {
               {message}
             </p>
 
+            {/* Audit-specific follow-up note */}
+            {showAuditNote && (
+              <p className="mt-4 text-navy/60 text-base leading-relaxed max-w-lg mx-auto">
+                After your report arrives, you'll have the option to book a free 15-min call with Dr. Ajufo to walk through your findings.
+              </p>
+            )}
+
             {/* Questions line for guide purchases */}
-            {!showCallCard && (
+            {!showCallCard && !showAuditNote && (
               <p className="mt-4 text-navy/60 text-lg leading-relaxed max-w-lg mx-auto">
                 Questions? Email us at{" "}
                 <a
@@ -103,6 +123,8 @@ export function ThankYouPage() {
                   <p className="text-xs text-navy/50">
                     {showCallCard
                       ? "Confirmation on its way"
+                      : showAuditNote
+                      ? "Audit arriving in 24 hours"
                       : "Download link on its way"}
                   </p>
                 </div>

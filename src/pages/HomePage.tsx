@@ -1,4 +1,5 @@
-import { Check, Clock, Flame, DollarSign, Download } from "lucide-react";
+import { Check, Clock, Flame, DollarSign, Download, BarChart2 } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useSEO } from "../hooks/useSEO";
 import { CTABanner } from "../components/CTABanner";
 import { FAQSection } from "../components/FAQSection";
@@ -36,7 +37,7 @@ function HeroSection() {
               need to build a thriving independent practice &mdash; without the
               burnout.
             </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-3">
+            <div className="mt-8 flex flex-col sm:flex-row gap-3 flex-wrap">
               <a
                 href={FREE_GUIDE_URL}
                 target="_blank"
@@ -54,6 +55,13 @@ function HeroSection() {
               >
                 Book a Free Discovery Call
               </a>
+              <Link
+                to="/free-audit"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-gold border-2 border-gold/30 rounded-lg hover:bg-gold/5 transition-colors"
+              >
+                <BarChart2 className="size-5" />
+                Get a Free Practice Audit
+              </Link>
             </div>
             {/* Trusted by badge */}
             <div className="mt-6 flex items-center gap-3">

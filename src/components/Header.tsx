@@ -34,7 +34,13 @@ export function Header() {
     }
   }, [dropdownOpen]);
 
-  const navLinks = [
+  const navLinks: Array<{
+    label: string;
+    href: string;
+    external?: boolean;
+    badge?: string;
+    sub?: Array<{ label: string; href: string }>;
+  }> = [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services", sub: [
       { label: "Subscriptions", href: "/subscriptions" },
@@ -42,6 +48,7 @@ export function Header() {
     { label: "About", href: "/about" },
     { label: "Blog", href: "/blog" },
     { label: "Free Guide", href: "https://funnels.practicerxconsulting.com/freeguide-page", external: true },
+    { label: "Free Audit", href: "/free-audit", badge: "Free" },
     { label: "Contact", href: "/contact" },
     { label: "Find A Provider", href: "/find-a-provider" },
   ];
@@ -151,13 +158,18 @@ export function Header() {
                 <Link
                   key={link.href}
                   to={link.href}
-                  className={`text-sm font-medium transition-colors ${
+                  className={`inline-flex items-center gap-1.5 text-sm font-medium transition-colors ${
                     isActive(link.href)
                       ? "text-navy"
                       : "text-navy/60 hover:text-navy"
                   }`}
                 >
                   {link.label}
+                  {link.badge && (
+                    <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-gold/15 text-gold leading-none">
+                      {link.badge}
+                    </span>
+                  )}
                 </Link>
               )
             )}
@@ -204,13 +216,18 @@ export function Header() {
                 ) : (
                   <Link
                     to={link.href}
-                    className={`block text-sm font-medium py-2.5 px-2 rounded-lg transition-colors ${
+                    className={`flex items-center gap-2 text-sm font-medium py-2.5 px-2 rounded-lg transition-colors ${
                       isActive(link.href)
                         ? "text-navy bg-navy/5"
                         : "text-navy/60 hover:text-navy hover:bg-navy/5"
                     }`}
                   >
                     {link.label}
+                    {link.badge && (
+                      <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-gold/15 text-gold leading-none">
+                        {link.badge}
+                      </span>
+                    )}
                   </Link>
                 )}
                 {link.sub?.map((subLink) => (
