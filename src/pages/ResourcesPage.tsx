@@ -127,7 +127,7 @@ export function ResourcesPage() {
             Blog
           </span>
           <h1
-            className="text-4xl md:text-5xl lg:text-6xl font-semibold text-navy mt-3 leading-[1.1] tracking-tight max-w-xl"
+            className="text-4xl md:text-5xl lg:text-6xl font-semibold text-navy mt-3 leading-[1.1] tracking-tight"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             Insights for physicians building{" "}
