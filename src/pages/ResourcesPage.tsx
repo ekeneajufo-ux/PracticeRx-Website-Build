@@ -1,5 +1,6 @@
-import { ArrowRight, Clock } from "lucide-react";
+import { ArrowRight, Clock, Search, X } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import { useSEO } from "../hooks/useSEO";
 import { AISection } from "../components/AISection";
 import { FAQSection } from "../components/FAQSection";
@@ -75,6 +76,8 @@ const COVER_POSITION: Record<string, string> = {
 };
 
 export function ResourcesPage() {
+  const [searchQuery, setSearchQuery] = useState("");
+
   useSEO({
     title: "Blog",
     description:
@@ -104,6 +107,16 @@ export function ResourcesPage() {
     }
   );
 
+  // Filter articles based on search query
+  const filteredArticles = allArticles.filter((article) => {
+    const query = searchQuery.toLowerCase();
+    return (
+      article.title.toLowerCase().includes(query) ||
+      article.excerpt.toLowerCase().includes(query) ||
+      article.tags.some((tag) => tag.toLowerCase().includes(query))
+    );
+  });
+
   return (
     <div className="bg-cream min-h-screen">
       <LeadMagnetPopup />
@@ -120,21 +133,62 @@ export function ResourcesPage() {
             Insights for physicians building{" "}
             <span className="italic text-gold">independent practices.</span>
           </h1>
+
+          {/* Search Bar */}
+          <div className="mt-8 max-w-md">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-navy/40 pointer-events-none" />
+              <input
+                type="text"
+                placeholder="Search articles..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full pl-10 pr-10 py-2.5 border border-navy/20 rounded-lg bg-white text-navy placeholder-navy/40 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/20 transition-colors"
+              />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery("")}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-navy/40 hover:text-navy transition-colors"
+                >
+                  <X className="size-4" />
+                </button>
+              )}
+            </div>
+            {searchQuery && (
+              <p className="text-sm text-navy/50 mt-2">
+                Found {filteredArticles.length} article{filteredArticles.length !== 1 ? "s" : ""}
+              </p>
+            )}
+          </div>
         </div>
       </section>
 
       {/* Article Cards */}
       <section className="pb-8 md:pb-10">
         <div className="container">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {allArticles.map((article) => (
-              <ArticleCard
-                key={article._id}
-                article={article}
-                coverPosition={COVER_POSITION[article.slug]}
-              />
-            ))}
-          </div>
+          {filteredArticles.length > 0 ? (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {filteredArticles.map((article) => (
+                <ArticleCard
+                  key={article._id}
+                  article={article}
+                  coverPosition={COVER_POSITION[article.slug]}
+                />
+              ))}
+            </div>
+          ) : (
+            <div className="py-12 text-center">
+              <p className="text-lg text-navy/60">
+                No articles found matching "{searchQuery}"
+              </p>
+              <button
+                onClick={() => setSearchQuery("")}
+                className="mt-4 text-gold hover:text-gold/80 font-medium transition-colors"
+              >
+                Clear search
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
