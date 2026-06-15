@@ -1,5 +1,4 @@
 import { Check, Clock, Flame, DollarSign, Download, BarChart2 } from "lucide-react";
-import { Link } from "react-router-dom";
 import { useSEO } from "../hooks/useSEO";
 import { CTABanner } from "../components/CTABanner";
 import { FAQSection } from "../components/FAQSection";
@@ -49,18 +48,17 @@ function HeroSection() {
                 Download Free Launch Guide
               </a>
               <a
-                href="https://funnels.practicerxconsulting.com/strategysession"
+                href="https://calendly.com/ekene-ajufo/call"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-navy border-2 border-navy/20 rounded-lg hover:bg-navy/5 transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-bold bg-navy text-white rounded-lg hover:bg-navy/90 transition-colors shadow-md hover:shadow-lg"
               >
-                Book a Free Discovery Call
+                <Clock className="size-5" />
+                Book a Discovery Call
               </a>
               <a
                 href={FREE_AUDIT_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-gold border-2 border-gold/30 rounded-lg hover:bg-gold/5 transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-bold bg-white text-navy border-2 border-navy rounded-lg hover:bg-navy/5 transition-colors shadow-md hover:shadow-lg"
               >
                 <BarChart2 className="size-5" />
                 Get a Free Practice Audit
@@ -451,7 +449,7 @@ function FounderSection() {
               <span className="italic text-gold">MD, FAAP</span>
             </h2>
             <p className="mt-2 text-sm font-medium text-navy/50 tracking-wide">
-              MD &middot; Practicing Pediatrician &middot; AI Healthcare Business Consultant
+              MD · Practicing Pediatrician · AI Healthcare Business Consultant
             </p>
             <p className="mt-5 text-navy/60 leading-relaxed">
               Dr. Ekene Ajufo is a practicing pediatrician and healthcare
