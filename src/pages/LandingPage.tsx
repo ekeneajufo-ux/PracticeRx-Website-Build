@@ -21,6 +21,7 @@ import {
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { AssessmentPopup } from "@/components/AssessmentPopup";
 
 const FREE_GUIDE_URL = "https://funnels.practicerxconsulting.com/freeguide-page";
 
@@ -94,6 +95,8 @@ export function LandingPage() {
 
   return (
     <div className="flex flex-col">
+      <AssessmentPopup />
+      
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-navy" />
