@@ -12,6 +12,7 @@ import { GuidesResources } from "../components/GuidesResources";
 import { LeadMagnetPopup } from "../components/LeadMagnetPopup";
 
 const FREE_GUIDE_URL = "https://funnels.practicerxconsulting.com/freeguide-page";
+const FREE_AUDIT_URL = "https://funnels.practicerxconsulting.com/practiceaudit";
 
 /* ─── Hero ─── */
 function HeroSection() {
@@ -55,13 +56,15 @@ function HeroSection() {
               >
                 Book a Free Discovery Call
               </a>
-              <Link
-                to="/free-audit"
+              <a
+                href={FREE_AUDIT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-gold border-2 border-gold/30 rounded-lg hover:bg-gold/5 transition-colors"
               >
                 <BarChart2 className="size-5" />
                 Get a Free Practice Audit
-              </Link>
+              </a>
             </div>
             {/* Trusted by badge */}
             <div className="mt-6 flex items-center gap-3">
