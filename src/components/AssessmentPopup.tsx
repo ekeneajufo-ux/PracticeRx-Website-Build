@@ -14,7 +14,8 @@ export function AssessmentPopup() {
       const scrollPercent =
         (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
 
-      if (scrollPercent >= 20) {
+      // Trigger at 5% scroll instead of 20% for easier testing
+      if (scrollPercent >= 5) {
         setIsVisible(true);
         setHasShown(true);
       }
