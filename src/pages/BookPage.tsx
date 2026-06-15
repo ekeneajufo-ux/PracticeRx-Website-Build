@@ -1,1 +1,169 @@
-aW1wb3J0IHsgdXNlU0VPIH0gZnJvbSAiLi4vaG9va3MvdXNlU0VPIjsKaW1wb3J0IHsgdXNlRWZmZWN0IH0gZnJvbSAicmVhY3QiOwppbXBvcnQgeyBDYWxlbmRhciwgQ2hlY2tDaXJjbGUyLCBDbG9jaywgVmlkZW8gfSBmcm9tICJsdWNpZGUtcmVhY3QiOwoKY29uc3QgR0hMX0JPT0tJTkdfSUQgPSAiekpKbEZZdm9oOTF3eDBONjNqTTciOwpjb25zdCBHSExfQ0FMRU5EQVJfU1JDID0gYGh0dHBzOi8vYXBpLmxlYWRjb25uZWN0b3JocS5jb20vd2lkZ2V0L2Jvb2tpbmcvJHtHSExfQk9PS0lOR19JRH1gOwoKZXhwb3J0IGZ1bmN0aW9uIEJvb2tQYWdlKCkgewogIHVzZVNFTyh7CiAgICB0aXRsZTogIkJvb2sgYSBGcmVlIERpc2NvdmVyeSBDYWxsIiwKICAgIGRlc2NyaXB0aW9uOiAiU2NoZWR1bGUgYSBmcmVlIDYwLW1pbnV0ZSBkaXNjb3ZlcnkgY2FsbCB3aXRoIERyLiBFa2VuZSBBanVmbyB0byBkaXNjdXNzIGxhdW5jaGluZyB5b3VyIERQQywgY29uY2llcmdlLCBvciBjYXNoLWJhc2VkIHByYWN0aWNlLiIsCiAgICBwYXRoOiAiL2Jvb2siLAogIH0pOwoKICAvLyBMb2FkIEdITCBlbWJlZCBzY3JpcHQKICB1c2VFZmZlY3QoKCkgPT4gewogICAgY29uc3QgZXhpc3RpbmcgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCdzY3JpcHRbc3JjPSJodHRwczovL2xpbmsubXNnc25kci5jb20vanMvZm9ybV9lbWJlZC5qcyJdJyk7CiAgICBpZiAoIWV4aXN0aW5nKSB7CiAgICAgIGNvbnN0IHNjcmlwdCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoInNjcmlwdCIpOwogICAgICBzY3JpcHQuc3JjID0gImh0dHBzOi8vbGluay5tc2dzbmRyLmNvbS9qcy9mb3JtX2VtYmVkLmpzIjsKICAgICAgc2NyaXB0LmFzeW5jID0gdHJ1ZTsKICAgICAgZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZChzY3JpcHQpOwogICAgfQoKICAgIC8vIExpc3RlbiBmb3IgR0hMIGhlaWdodCByZXNpemUgbWVzc2FnZXMKICAgIGNvbnN0IGhhbmRsZU1lc3NhZ2UgPSAoZXZlbnQ6IE1lc3NhZ2VFdmVudCkgPT4gewogICAgICBpZiAoCiAgICAgICAgZXZlbnQuZGF0YS50eXBlID09PSAiSFNGb3JtQ29sbGVjdGVkIiB8fAogICAgICAgIGV2ZW50LmRhdGEudHlwZSA9PT0gImJvb2tpbmdGb3JtQ29sbGVjdGVkIgogICAgICApIHsKICAgICAgICBjb25zdCBpZnJhbWUgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChgbXNnc25kci1jYWxlbmRhci0ke0dITF9CT09LSU5HX0lEfWApIGFzIEhUTUxJRnJhbWVFbGVtZW50OwogICAgICAgIGlmIChpZnJhbWUgJiYgZXZlbnQuZGF0YS52YWx1ZSkgewogICAgICAgICAgaWZyYW1lLnN0eWxlLmhlaWdodCA9IGV2ZW50LmRhdGEudmFsdWUgKyAicHgiOwogICAgICAgIH0KICAgICAgfQogICAgfTsKCiAgICB3aW5kb3cuYWRkRXZlbnRMaXN0ZW5lcigibWVzc2FnZSIsIGhhbmRsZU1lc3NhZ2UpOwogICAgcmV0dXJuICgpID0+IHdpbmRvdy5yZW1vdmVFdmVudExpc3RlbmVyKCJtZXNzYWdlIiwgaGFuZGxlTWVzc2FnZSk7CiAgfSwgW10pOwoKICByZXR1cm4gKAogICAgPGRpdiBjbGFzc05hbWU9ImZsZXggZmxleC1jb2wiPgogICAgICB7LyogSGVybyAqL30KICAgICAgPHNlY3Rpb24gY2xhc3NOYW1lPSJiZy1uYXZ5IHB5LTEyIj4KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iY29udGFpbmVyIj4KICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJtYXgtdy0yeGwiPgogICAgICAgICAgICA8aDEKICAgICAgICAgICAgICBjbGFzc05hbWU9InRleHQtM3hsIG1kOnRleHQtNHhsIGZvbnQtYm9sZCB0ZXh0LXdoaXRlIG1iLTQiCiAgICAgICAgICAgICAgc3R5bGU9e3sgZm9udEZhbWlseTogInZhcigtLWZvbnQtaGVhZGluZykiIH19CiAgICAgICAgICAgID4KICAgICAgICAgICAgICBCb29rIGEgRnJlZSA8c3BhbiBjbGFzc05hbWU9InRleHQtZ29sZCI+RGlzY292ZXJ5IENhbGw8L3NwYW4+CiAgICAgICAgICAgIDwvaDE+CiAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0idGV4dC1ncmF5LTMwMCB0ZXh0LWxnIj4KICAgICAgICAgICAgICA2MCBtaW51dGVzIHRvIGV4cGxvcmUgd2hldGhlciBEUEMsIGNvbmNpZXJnZSwgb3IgYW4gYWx0ZXJuYXRpdmUKICAgICAgICAgICAgICBtb2RlbCBpcyByaWdodCBmb3IgeW91IOKAlCBhbmQgbWFwIG91dCB5b3VyIHBhdGggdG8gaW5kZXBlbmRlbmNlLgogICAgICAgICAgICA8L3A+CiAgICAgICAgICA8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgPC9zZWN0aW9uPgoKICAgICAgPHNlY3Rpb24gY2xhc3NOYW1lPSJweS04IGJnLWJhY2tncm91bmQiPgogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJjb250YWluZXIiPgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImdyaWQgbGc6Z3JpZC1jb2xzLTUgZ2FwLTEyIj4KICAgICAgICAgICAgey8qIENhbGVuZGFyIGVtYmVkICovfQogICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ibGc6Y29sLXNwYW4tMyI+CiAgICAgICAgICAgICAgPGgyCiAgICAgICAgICAgICAgICBjbGFzc05hbWU9InRleHQteGwgZm9udC1zZW1pYm9sZCB0ZXh0LW5hdnkgbWItMSIKICAgICAgICAgICAgICAgIHN0eWxlPXt7IGZvbnRGYW1pbHk6ICJ2YXIoLS1mb250LWhlYWRpbmcpIiB9fQogICAgICAgICAgICAgID4KICAgICAgICAgICAgICAgIFNlbGVjdCBhIFRpbWUgVGhhdCBXb3JrcyBmb3IgWW91CiAgICAgICAgICAgICAgPC9oMj4KICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9InRleHQtc20gdGV4dC1tdXRlZC1mb3JlZ3JvdW5kIG1iLTUiPgogICAgICAgICAgICAgICAgQ2hvb3NlIGEgc2xvdCBiZWxvdyBhbmQgeW91J2xsIHJlY2VpdmUgYSBjb25maXJtYXRpb24gZW1haWwgd2l0aAogICAgICAgICAgICAgICAgYSBab29tIGxpbmsuCiAgICAgICAgICAgICAgPC9wPgoKICAgICAgICAgICAgICB7LyogR0hMIENhbGVuZGFyIFdpZGdldCAqL30KICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0icm91bmRlZC14bCBib3JkZXIgYm9yZGVyLWJvcmRlci82MCBvdmVyZmxvdy1oaWRkZW4gYmctd2hpdGUiPgogICAgICAgICAgICAgICAgPGlmcmFtZQogICAgICAgICAgICAgICAgICBpZD17YG1zZ3NuZHItY2FsZW5kYXItJHtHSExfQk9PS0lOR19JRH1gfQogICAgICAgICAgICAgICAgICBzcmM9e0dITF9DQUxFTkRBUl9TUkN9CiAgICAgICAgICAgICAgICAgIHN0eWxlPXt7IHdpZHRoOiAiMTAwJSIsIGhlaWdodDogIjcwMHB4IiwgYm9yZGVyOiAibm9uZSIsIG92ZXJmbG93OiAiaGlkZGVuIiB9fQogICAgICAgICAgICAgICAgICBzY3JvbGxpbmc9Im5vIgogICAgICAgICAgICAgICAgICB0aXRsZT0iQm9vayBhIERpc2NvdmVyeSBDYWxsIHdpdGggRHIuIEVrZW5lIEFqdWZvIgogICAgICAgICAgICAgICAgICBsb2FkaW5nPSJsYXp5IgogICAgICAgICAgICAgICAgLz4KICAgICAgICAgICAgICA8L2Rpdj4KCiAgICAgICAgICAgICAgPHAgY2xhc3NOYW1lPSJ0ZXh0LXhzIHRleHQtbXV0ZWQtZm9yZWdyb3VuZCBtdC0zIHRleHQtY2VudGVyIj4KICAgICAgICAgICAgICAgIEhhdmluZyB0cm91YmxlP3siICJ9CiAgICAgICAgICAgICAgICA8YQogICAgICAgICAgICAgICAgICBocmVmPSIvY29udGFjdCIKICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPSJ0ZXh0LWdvbGQtZGFyayBob3Zlcjp0ZXh0LWdvbGQgZm9udC1tZWRpdW0gdW5kZXJsaW5lIgogICAgICAgICAgICAgICAgPgogICAgICAgICAgICAgICAgICBTZW5kIHVzIGEgbWVzc2FnZQogICAgICAgICAgICAgICAgPC9hPnsiICJ9CiAgICAgICAgICAgICAgICBhbmQgd2UmYXBvcztsbCBmaW5kIGEgdGltZS4KICAgICAgICAgICAgICA8L3A+CiAgICAgICAgICAgIDwvZGl2PgoKICAgICAgICAgICAgey8qIFNpZGViYXIgKi99CiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJsZzpjb2wtc3Bhbi0yIHNwYWNlLXktNiI+CiAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9InAtNiByb3VuZGVkLXhsIGJvcmRlciBiZy1jYXJkIj4KICAgICAgICAgICAgICAgIDxoMwogICAgICAgICAgICAgICAgICBjbGFzc05hbWU9ImZvbnQtYm9sZCB0ZXh0LWxnIG1iLTQiCiAgICAgICAgICAgICAgICAgIHN0eWxlPXt7IGZvbnRGYW1pbHk6ICJ2YXIoLS1mb250LWhlYWRpbmcpIiB9fQogICAgICAgICAgICAgICAgPgogICAgICAgICAgICAgICAgICBXaGF0IHRvIEV4cGVjdAogICAgICAgICAgICAgICAgPC9oMz4KICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJzcGFjZS15LTQiPgogICAgICAgICAgICAgICAgICB7WwogICAgICAgICAgICAgICAgICAgIHsgaWNvbjogQ2xvY2ssIGxhYmVsOiAiNjAtbWludXRlIGZvY3VzZWQgc2Vzc2lvbiIgfSwKICAgICAgICAgICAgICAgICAgICB7IGljb246IFZpZGVvLCBsYWJlbDogIlZpZGVvIGNhbGwiIH0sCiAgICAgICAgICAgICAgICAgICAgeyBpY29uOiBDYWxlbmRhciwgbGFiZWw6ICJJbnN0YW50IGNvbmZpcm1hdGlvbiBlbWFpbCIgfSwKICAgICAgICAgICAgICAgICAgXS5tYXAoKGl0ZW0pID0+ICgKICAgICAgICAgICAgICAgICAgICA8ZGl2IGtleT17aXRlbS5sYWJlbH0gY2xhc3NOYW1lPSJmbGV4IGl0ZW1zLWNlbnRlciBnYXAtMyI+CiAgICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0idy05IGgtOSByb3VuZGVkLWxnIGJnLWdvbGQvMTAgZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgc2hyaW5rLTAiPgogICAgICAgICAgICAgICAgICAgICAgICA8aXRlbS5pY29uIGNsYXNzTmFtZT0ic2l6ZS00IHRleHQtZ29sZC1kYXJrIiAvPgogICAgICAgICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9InRleHQtc20iPntpdGVtLmxhYmVsfTwvc3Bhbj4KICAgICAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgICAgKSl9CiAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICA8L2Rpdj4KCiAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9InAtNiByb3VuZGVkLXhsIGJvcmRlciBiZy1jYXJkIj4KICAgICAgICAgICAgICAgIDxoMwogICAgICAgICAgICAgICAgICBjbGFzc05hbWU9ImZvbnQtYm9sZCB0ZXh0LWxnIG1iLTQiCiAgICAgICAgICAgICAgICAgIHN0eWxlPXt7IGZvbnRGYW1pbHk6ICJ2YXIoLS1mb250LWhlYWRpbmcpIiB9fQogICAgICAgICAgICAgICAgPgogICAgICAgICAgICAgICAgICBXZSZhcG9zO2xsIENvdmVyCiAgICAgICAgICAgICAgICA8L2gzPgogICAgICAgICAgICAgICAgPHVsIGNsYXNzTmFtZT0ic3BhY2UteS0zIj4KICAgICAgICAgICAgICAgICAge1sKICAgICAgICAgICAgICAgICAgICAiVW5kZXJzdGFuZGluZyB5b3VyIGdvYWxzIiwKICAgICAgICAgICAgICAgICAgICAiQmVzdCBwcmFjdGljZSBtb2RlbCBmb3IgeW91ciBzaXR1YXRpb24iLAogICAgICAgICAgICAgICAgICAgICJTcGVjaWZpYyBuZXh0IHN0ZXBzIiwKICAgICAgICAgICAgICAgICAgXS5tYXAoKGl0ZW0pID0+ICgKICAgICAgICAgICAgICAgICAgICA8bGkga2V5PXtpdGVtfSBjbGFzc05hbWU9ImZsZXggaXRlbXMtc3RhcnQgZ2FwLTIgdGV4dC1zbSI+CiAgICAgICAgICAgICAgICAgICAgICA8Q2hlY2tDaXJjbGUyIGNsYXNzTmFtZT0ic2l6ZS00IHRleHQtZ3JlZW4tNjAwIG10LTAuNSBzaHJpbmstMCIgLz4KICAgICAgICAgICAgICAgICAgICAgIHtpdGVtfQogICAgICAgICAgICAgICAgICAgIDwvbGk+CiAgICAgICAgICAgICAgICAgICkpfQogICAgICAgICAgICAgICAgPC91bD4KICAgICAgICAgICAgICA8L2Rpdj4KCiAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9InAtNiByb3VuZGVkLXhsIGJnLW5hdnkgdGV4dC13aGl0ZSI+CiAgICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9InRleHQtc20gdGV4dC1ncmF5LTMwMCBpdGFsaWMgbGVhZGluZy1yZWxheGVkIj4KICAgICAgICAgICAgICAgICAgIkkgaGVscCBwaHlzaWNpYW5zIHdobyBhcmUgcmVhZHkgdG8gc3RvcCBwcmFjdGljaW5nIG1lZGljaW5lIG9uCiAgICAgICAgICAgICAgICAgIHNvbWVvbmUgZWxzZSdzIHRlcm1zLiBJZiB5b3UncmUgaGVyZSwgeW91J3JlIGFscmVhZHkgYWhlYWQgb2YKICAgICAgICAgICAgICAgICAgOTAlIG9mIHlvdXIgcGVlcnMuIgogICAgICAgICAgICAgICAgPC9wPgogICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9Im10LTQiPgogICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZm9udC1zZW1pYm9sZCB0ZXh0LWdvbGQgdGV4dC1zbSI+CiAgICAgICAgICAgICAgICAgICAgRHIuIEVrZW5lIEFqdWZvLCBNRAogICAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9InRleHQteHMgdGV4dC1ncmF5LTQwMCI+CiAgICAgICAgICAgICAgICAgICAgRm91bmRlciwgUHJhY3RpY2VSeCBDb25zdWx0aW5nCiAgICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICAgIDwvc2VjdGlvbj4KICAgIDwvZGl2PgogICk7Cn0K
+import { useSEO } from "../hooks/useSEO";
+import { useEffect } from "react";
+import { Calendar, CheckCircle2, Clock, Video } from "lucide-react";
+
+const GHL_BOOKING_ID = "zJJlFYvoh91wx0N63jM7";
+const GHL_CALENDAR_SRC = `https://api.leadconnectorhq.com/widget/booking/${GHL_BOOKING_ID}`;
+
+export function BookPage() {
+  useSEO({
+    title: "Book a Free Discovery Call",
+    description: "Schedule a free 60-minute discovery call with Dr. Ekene Ajufo to discuss launching your DPC, concierge, or cash-based practice.",
+    path: "/book",
+  });
+
+  // Load GHL embed script
+  useEffect(() => {
+    const existing = document.querySelector('script[src="https://link.msgsndr.com/js/form_embed.js"]');
+    if (!existing) {
+      const script = document.createElement("script");
+      script.src = "https://link.msgsndr.com/js/form_embed.js";
+      script.async = true;
+      document.body.appendChild(script);
+    }
+
+    // Listen for GHL height resize messages
+    const handleMessage = (event: MessageEvent) => {
+      if (
+        event.data.type === "HSFormCollected" ||
+        event.data.type === "bookingFormCollected"
+      ) {
+        const iframe = document.getElementById(`msgsndr-calendar-${GHL_BOOKING_ID}`) as HTMLIFrameElement;
+        if (iframe && event.data.value) {
+          iframe.style.height = event.data.value + "px";
+        }
+      }
+    };
+
+    window.addEventListener("message", handleMessage);
+    return () => window.removeEventListener("message", handleMessage);
+  }, []);
+
+  return (
+    <div className="flex flex-col">
+      {/* Hero */}
+      <section className="bg-navy py-12">
+        <div className="container">
+          <div className="max-w-2xl">
+            <h1
+              className="text-3xl md:text-4xl font-bold text-white mb-4"
+              style={{ fontFamily: "var(--font-heading)" }}
+            >
+              Book a Free <span className="text-gold">Discovery Call</span>
+            </h1>
+            <p className="text-gray-300 text-lg">
+              60 minutes to explore whether DPC, concierge, or an alternative
+              model is right for you — and map out your path to independence.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-8 bg-background">
+        <div className="container">
+          <div className="grid lg:grid-cols-5 gap-12">
+            {/* Calendar embed */}
+            <div className="lg:col-span-3">
+              <h2
+                className="text-xl font-semibold text-navy mb-1"
+                style={{ fontFamily: "var(--font-heading)" }}
+              >
+                Select a Time That Works for You
+              </h2>
+              <p className="text-sm text-muted-foreground mb-5">
+                Choose a slot below and you'll receive a confirmation email with
+                a Zoom link.
+              </p>
+
+              {/* GHL Calendar Widget */}
+              <div className="rounded-xl border border-border/60 overflow-hidden bg-white">
+                <iframe
+                  id={`msgsndr-calendar-${GHL_BOOKING_ID}`}
+                  src={GHL_CALENDAR_SRC}
+                  style={{ width: "100%", height: "700px", border: "none", overflow: "hidden" }}
+                  scrolling="no"
+                  title="Book a Discovery Call with Dr. Ekene Ajufo"
+                  loading="lazy"
+                />
+              </div>
+
+              <p className="text-xs text-muted-foreground mt-3 text-center">
+                Having trouble?{" "}
+                <a
+                  href="/contact"
+                  className="text-gold-dark hover:text-gold font-medium underline"
+                >
+                  Send us a message
+                </a>{" "}
+                and we&apos;ll find a time.
+              </p>
+            </div>
+
+            {/* Sidebar */}
+            <div className="lg:col-span-2 space-y-6">
+              <div className="p-6 rounded-xl border bg-card">
+                <h3
+                  className="font-bold text-lg mb-4"
+                  style={{ fontFamily: "var(--font-heading)" }}
+                >
+                  What to Expect
+                </h3>
+                <div className="space-y-4">
+                  {[
+                    { icon: Clock, label: "60-minute focused session" },
+                    { icon: Video, label: "Video call" },
+                    { icon: Calendar, label: "Instant confirmation email" },
+                  ].map((item) => (
+                    <div key={item.label} className="flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-lg bg-gold/10 flex items-center justify-center shrink-0">
+                        <item.icon className="size-4 text-gold-dark" />
+                      </div>
+                      <span className="text-sm">{item.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="p-6 rounded-xl border bg-card">
+                <h3
+                  className="font-bold text-lg mb-4"
+                  style={{ fontFamily: "var(--font-heading)" }}
+                >
+                  We&apos;ll Cover
+                </h3>
+                <ul className="space-y-3">
+                  {[
+                    "Understanding your goals",
+                    "Best practice model for your situation",
+                    "Specific next steps",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm">
+                      <CheckCircle2 className="size-4 text-green-600 mt-0.5 shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="p-6 rounded-xl bg-navy text-white">
+                <p className="text-sm text-gray-300 italic leading-relaxed">
+                  "I help physicians who are ready to stop practicing medicine on
+                  someone else's terms. If you're here, you're already ahead of
+                  90% of your peers."
+                </p>
+                <div className="mt-4">
+                  <div className="font-semibold text-gold text-sm">
+                    Dr. Ekene Ajufo, MD
+                  </div>
+                  <div className="text-xs text-gray-400">
+                    Founder, PracticeRx Consulting
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
