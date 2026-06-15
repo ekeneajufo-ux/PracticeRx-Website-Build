@@ -1,17 +1,5 @@
 {
   "installCommand": "npm install --legacy-peer-deps",
-  "redirects": [
-    {
-      "source": "/",
-      "destination": "https://practicerxconsulting.com",
-      "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "destination": "https://practicerxconsulting.com/:path*",
-      "permanent": true
-    }
-  ],
   "rewrites": [
     {
       "source": "/((?!assets/|favicon|icon|og-image|apple-touch|physician-roadmap|hero-clinic|sitemap|robots|.*\\.(?:png|jpg|jpeg|gif|webp|svg|ico|xml|txt)).*)",
