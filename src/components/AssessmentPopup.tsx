@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
 import { X } from "lucide-react";
-import { useNavigate } from "react-router-dom";
 
 export function AssessmentPopup() {
   const [isVisible, setIsVisible] = useState(false);
   const [hasShown, setHasShown] = useState(false);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,7 +30,7 @@ export function AssessmentPopup() {
   };
 
   const handleStartAssessment = () => {
-    navigate("/free-audit");
+    window.location.href = "https://funnels.practicerxconsulting.com/practiceaudit";
   };
 
   return (
