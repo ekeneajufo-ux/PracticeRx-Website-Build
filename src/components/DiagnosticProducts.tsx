@@ -1,5 +1,4 @@
 import { Check, Clock, ShoppingCart, BarChart2, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
 
 interface Product {
   tag: string;
@@ -167,13 +166,15 @@ function FreeAuditCard() {
           </p>
           <p className="text-[11px] text-white/40">Delivered in 24 hours</p>
         </div>
-        <Link
-          to="/free-audit"
+        <a
+          href="https://funnels.practicerxconsulting.com/practiceaudit"
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-6 py-3 text-sm font-bold bg-gold text-navy rounded-lg hover:bg-gold/90 transition-colors whitespace-nowrap"
         >
           Get My Free Audit
           <ArrowRight className="size-4" />
-        </Link>
+        </a>
       </div>
     </div>
   );
