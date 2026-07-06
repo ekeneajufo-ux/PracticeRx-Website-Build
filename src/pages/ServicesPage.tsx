@@ -1,7 +1,31 @@
-import { Check, ArrowRight } from "lucide-react";
+import { Check, ArrowRight, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useSEO } from "../hooks/useSEO";
 import { CTABanner } from "../components/CTABanner";
+
+const FREE_RESOURCES = [
+  {
+    icon: "🗺️",
+    title: "State-by-State DPC Launch Guide",
+    tagline: "Is DPC even legal where you live? All 50 states, plus 12 deep dives.",
+    cta: "Get the free guide",
+    href: "https://funnels.practicerxconsulting.com/stateguide",
+  },
+  {
+    icon: "🖥️",
+    title: "DPC EMR Vendor Comparison Guide",
+    tagline: "10 EMRs compared honestly — pricing, features, and real trade-offs.",
+    cta: "Get the free guide",
+    href: "https://funnels.practicerxconsulting.com/emrguide",
+  },
+  {
+    icon: "📄",
+    title: "DPC Launch Templates Library",
+    tagline: "Membership agreement, pricing model, and onboarding packet — ready to edit.",
+    cta: "Get the free templates",
+    href: "https://funnels.practicerxconsulting.com/templateslibrary",
+  },
+];
 
 const PLANS = [
   {
@@ -97,6 +121,12 @@ export function ServicesPage() {
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-navy/20 text-navy text-sm font-semibold hover:bg-cream transition-colors"
                 >
                   I want a self-serve resource <ArrowRight className="size-3.5" />
+                </a>
+                <a
+                  href="#free-resources"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-navy/20 text-navy text-sm font-semibold hover:bg-cream transition-colors"
+                >
+                  Browse free resources <Download className="size-3.5" />
                 </a>
               </div>
             </div>
@@ -196,6 +226,56 @@ export function ServicesPage() {
                     {plan.cta}
                   </Link>
                 )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Free Resources ───────────────────────────────────── */}
+      <section id="free-resources" className="py-8 md:py-10 bg-white border-t border-border/40">
+        <div className="container">
+          <span className="text-xs font-semibold tracking-[0.2em] uppercase text-gold">
+            Free Resources
+          </span>
+          <h2
+            className="text-3xl md:text-4xl font-semibold text-navy mt-3 leading-tight"
+            style={{ fontFamily: "var(--font-heading)" }}
+          >
+            Not ready to pay for{" "}
+            <span className="italic text-gold">anything yet?</span>
+          </h2>
+          <p className="mt-4 text-navy/60 max-w-lg leading-relaxed">
+            Start with these free guides and templates — no credit card, no sales
+            call required.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-5 mt-6">
+            {FREE_RESOURCES.map((resource, i) => (
+              <div
+                key={i}
+                className="rounded-xl border border-border/60 bg-cream p-6 flex flex-col"
+              >
+                <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center text-lg mb-4">
+                  {resource.icon}
+                </div>
+                <h3
+                  className="text-lg font-semibold text-navy leading-snug"
+                  style={{ fontFamily: "var(--font-heading)" }}
+                >
+                  {resource.title}
+                </h3>
+                <p className="text-sm text-navy/50 mt-1.5 flex-1">
+                  {resource.tagline}
+                </p>
+                <a
+                  href={resource.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-semibold bg-navy text-white rounded-lg hover:bg-navy-light transition-colors"
+                >
+                  {resource.cta} <ArrowRight className="size-3.5" />
+                </a>
               </div>
             ))}
           </div>
