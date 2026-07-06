@@ -1,4 +1,5 @@
-import { Check, Clock, Flame, DollarSign, Download, BarChart2 } from "lucide-react";
+import { Check, Clock, Flame, DollarSign, Download } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useSEO } from "../hooks/useSEO";
 import { CTABanner } from "../components/CTABanner";
 import { FAQSection } from "../components/FAQSection";
@@ -9,9 +10,6 @@ import { Process } from "../components/Process";
 import { DiagnosticProducts } from "../components/DiagnosticProducts";
 import { GuidesResources } from "../components/GuidesResources";
 import { LeadMagnetPopup } from "../components/LeadMagnetPopup";
-
-const FREE_GUIDE_URL = "https://funnels.practicerxconsulting.com/freeguide-page";
-const FREE_AUDIT_URL = "https://funnels.practicerxconsulting.com/practiceaudit";
 
 /* ─── Hero ─── */
 function HeroSection() {
@@ -38,15 +36,13 @@ function HeroSection() {
               burnout.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-3 flex-wrap">
-              <a
-                href={FREE_GUIDE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/free-guides"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-bold bg-gold text-navy rounded-lg hover:bg-gold-light transition-colors shadow-md hover:shadow-lg"
               >
                 <Download className="size-5" />
-                Download Free Launch Guide
-              </a>
+                Free Guides
+              </Link>
               <a
                 href="https://calendly.com/ekene-ajufo/call"
                 target="_blank"
@@ -55,13 +51,6 @@ function HeroSection() {
               >
                 <Clock className="size-5" />
                 Book a Discovery Call
-              </a>
-              <a
-                href={FREE_AUDIT_URL}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-bold bg-white text-navy border-2 border-navy rounded-lg hover:bg-navy/5 transition-colors shadow-md hover:shadow-lg"
-              >
-                <BarChart2 className="size-5" />
-                Get a Free Practice Audit
               </a>
             </div>
             {/* Trusted by badge */}
@@ -357,15 +346,13 @@ function LeadMagnetSection() {
               ))}
             </ul>
             <div className="mt-8">
-              <a
-                href={FREE_GUIDE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/free-guides"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-bold bg-gold text-navy rounded-lg hover:bg-gold-light transition-colors shadow-md hover:shadow-lg"
               >
                 <Download className="size-5" />
                 Download Free Guide
-              </a>
+              </Link>
             </div>
           </div>
 
