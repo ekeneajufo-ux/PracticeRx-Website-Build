@@ -22,6 +22,7 @@ import { SubscriptionsPage } from "./pages/SubscriptionsPage";
 import { FindAProviderPage } from "./pages/FindAProviderPage";
 import { CalendarWidget } from "./components/CalendarWidget";
 import { FreeAuditPage } from "./pages/FreeAuditPage";
+import { FreeGuidesPage } from "./pages/FreeGuidesPage";
 import OnboardPage from "./pages/OnboardPage";
 
 function ExternalRedirect({ to }: { to: string }) {
@@ -57,6 +58,7 @@ function App() {
             <Route path="/find-a-provider" element={<FindAProviderPage />} />
             <Route path="/book" element={<BookPage />} />
             <Route path="/free-audit" element={<FreeAuditPage />} />
+            <Route path="/free-guides" element={<FreeGuidesPage />} />
             <Route path="/thank-you" element={<ThankYouPage />} />
             {/* Client Onboarding - Hidden Link */}
             <Route path="/onboard" element={<OnboardPage />} />
