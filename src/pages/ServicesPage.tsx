@@ -16,7 +16,7 @@ const FREE_RESOURCES = [
     title: "DPC EMR Vendor Comparison Guide",
     tagline: "10 EMRs compared honestly — pricing, features, and real trade-offs.",
     cta: "Get the free guide",
-    href: "https://funnels.practicerxconsulting.com/emrguide",
+    href: "https://funnels.practicerxconsulting.com/emrguide-page",
   },
   {
     icon: "📄",
