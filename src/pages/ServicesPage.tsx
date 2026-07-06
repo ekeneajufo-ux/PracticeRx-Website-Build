@@ -9,7 +9,7 @@ const FREE_RESOURCES = [
     title: "State-by-State DPC Launch Guide",
     tagline: "Is DPC even legal where you live? All 50 states, plus 12 deep dives.",
     cta: "Get the free guide",
-    href: "https://funnels.practicerxconsulting.com/stateguide",
+    href: "https://funnels.practicerxconsulting.com/stateguides",
   },
   {
     icon: "🖥️",
