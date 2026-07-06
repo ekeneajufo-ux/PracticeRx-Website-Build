@@ -47,8 +47,7 @@ export function Header() {
     ]},
     { label: "About", href: "/about" },
     { label: "Blog", href: "/blog" },
-    { label: "Free Guide", href: "https://funnels.practicerxconsulting.com/freeguide-page", external: true },
-    { label: "Free Audit", href: "https://funnels.practicerxconsulting.com/practiceaudit", external: true, badge: "Free" },
+    { label: "Free Guides", href: "/free-guides" },
     { label: "Contact", href: "/contact" },
     { label: "Find A Provider", href: "/find-a-provider" },
   ];
